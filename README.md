@@ -1210,7 +1210,7 @@ b ) Once you signed up create your Application with required details on admin da
 
 
 
-![dashboard-blank-content](http://localhost:9090/applozic/resources/images/dashboard-blank-content.png)         
+![dashboard-blank-content](${contextPath}/resources/images/dashboard-blank-content.png)         
 
 
 
@@ -1219,7 +1219,7 @@ c) Once you create your application you can see your application-Id listed on ad
 
 
 
-![dashboard-blank-content](http://localhost:9090/applozic/resources/images/dashboard-content.png)         
+![dashboard-blank-content](${contextPath}/resources/images/dashboard-content.png)         
 
 
 
@@ -1239,7 +1239,7 @@ ii ) Go to Build Phase. Expand  Embedded frameworks and add applozic framework.
 
 
 
-![dashboard-blank-content](http://localhost:9090/applozic/resources/images/adding-applozic-framework.png)        
+![dashboard-blank-content](${contextPath}/resources/images/adding-applozic-framework.png)        
 
 
 
