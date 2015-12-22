@@ -1210,7 +1210,7 @@ b ) Once you signed up create your Application with required details on admin da
 
 
 
-![dashboard-blank-content](${contextPath}/resources/images/dashboard-blank-content.png)         
+![dashboard-blank-content](/resources/images/dashboard-blank-content.png)         
 
 
 
@@ -1219,7 +1219,7 @@ c) Once you create your application you can see your application-Id listed on ad
 
 
 
-![dashboard-blank-content](${contextPath}/resources/images/dashboard-content.png)         
+![dashboard-blank-content](/resources/images/dashboard-content.png)         
 
 
 
