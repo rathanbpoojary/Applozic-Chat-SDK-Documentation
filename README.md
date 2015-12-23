@@ -1210,7 +1210,7 @@ b ) Once you signed up create your Application with required details on admin da
 
 
 
-![dashboard-blank-content](https://www.applozic.com/resources/images/dashboard-blank-content.png)         
+![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/dashboard-blank-content.png)         
 
 
 
