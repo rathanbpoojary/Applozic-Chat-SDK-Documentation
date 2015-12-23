@@ -1219,7 +1219,7 @@ c) Once you create your application you can see your application-Id listed on ad
 
 
 
-![dashboard-blank-content](https://www.applozic.com/resources/images/dashboard-content.png)         
+![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/dashboard-content.png)         
 
 
 
@@ -1239,7 +1239,7 @@ ii ) Go to Build Phase. Expand  Embedded frameworks and add applozic framework.
 
 
 
-![dashboard-blank-content](https://www.applozic.com/resources/images/adding-applozic-framework.png)        
+![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/adding-applozic-framework.png)        
 
 
 
