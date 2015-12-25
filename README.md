@@ -6,7 +6,7 @@
 Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com to get the application key.       
 
 
-Want to contribute? Drop us a mail at  **contact@applozic.com**        
+Want to contribute? Drop us a mail at  *contact@applozic.com*       
 
 
 ### Getting Started        
@@ -343,11 +343,11 @@ $applozic.fn.applozic('loadTab', 'put-userId-here');
 
 
 
-Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com to get the application id.       
+Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com to get the application id.
 
+Instructions for Android: [Android/Getting Started](https://applozic.readme.io/docs/android-gettingstarted)
 
-
-Want to contribute? Drop us a mail at contact@applozic.com                
+Want to contribute? Drop us a mail at devashish@applozic.com            
 
 
 
@@ -733,7 +733,10 @@ For your custom contact list, replace MobiComKitPeopleActivity with your contact
 
 Sample app with integration is available under [app](https://github.com/AppLozic/Applozic-Android-SDK/tree/master/app)
 
-*Note : If you want to customize your contact list please click on [Building customize contact list](https://applozic.readme.io/docs/getting-started-with-contacts)              
+
+
+
+
 
 
 
@@ -1188,7 +1191,7 @@ Integrate messaging into your mobile apps and website without developing or main
 
 Instructions for IOS: IOS/Getting Started
 
-Want to contribute? Drop us a mail at devashish@applozic.com            
+Want to contribute? Drop us a mail at contact@applozic.com           
 
 
 
