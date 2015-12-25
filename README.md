@@ -6,7 +6,7 @@
 Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com to get the application key.       
 
 
-Want to contribute? Drop us a mail at  ******contact@applozic.com******       
+Want to contribute? Drop us a mail at  >*contact@applozic.com*      
 
 
 ### Getting Started        
