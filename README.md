@@ -9,10 +9,11 @@ Integrate messaging into your mobile apps and website without developing or main
 Want to contribute? Drop us a mail at   ` contact@applozic.com `    
 
 
-### Getting Started        
-    
-    
-  ***Welcome to the Applozic-Web-Plugin***
+### Getting Started          
+
+
+
+
 
 ****Applozic messaging jQuery plugin****
 
@@ -184,7 +185,8 @@ You can call below function to directly open any contact tab dynamically :
 
 
 
-***Welcome to the Applozic-Web-Plugin***
+
+
 
 ****Applozic messaging jQuery plugin****
 
@@ -1704,7 +1706,7 @@ You can build your contact service using applozic contact apis. Below is the sam
  
  
  
- Contact us at growth@applozic.com
+ Contact us at ` growth@applozic.com `
  
  
  
