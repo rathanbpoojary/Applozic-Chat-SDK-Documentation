@@ -330,7 +330,7 @@ You can call below function to directly open any contact tab dynamically :
 
 
 ```
-$applozic.fn.applozic('loadTab', 'put-userId-here'); 
+ $applozic.fn.applozic('loadTab', 'put-userId-here'); 
 ```
 
 
@@ -998,7 +998,7 @@ Sample json-
 ** test **               
 ``` 
 {"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj",
-"emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,                    
+"emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,
 "timeZoneOffset":"19800000"} 
 ```
 
@@ -1110,13 +1110,10 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 "createdAtTime":1437565473333,   
 "type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]}      
 
- ```                        
+ ```           
  
  
  
- 
- 
-
 | Response  | Description | 
 | ------------- | ------------- | 
 | error  | In case of any exception contact devashish@applozic.com  |
