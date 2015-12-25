@@ -527,7 +527,8 @@ Paste the following in your androidmanifest.xml:
     android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />              
 </activity>                                  
  
-<service android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService" android:exported="false" />                    
+<service android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService" 
+   android:exported="false" />                    
 
 <receiver android:name="com.applozic.mobicomkit.broadcast.NotificationBroadcastReceiver">                                  
     <intent-filter> <action android:name="applozic.LAUNCH_APP" /> </intent-filter>                      
@@ -759,7 +760,8 @@ Class: com.applozic.mobicomkit.api.account.register.RegisterUserClientService
 
 ** java **          
 ```
-new RegisterUserClientService(activity).createAccount(USER_EMAIL, USER_ID, USER_PHONE_NUMBER, GCM_REGISTRATION_ID);         
+new RegisterUserClientService(activity).createAccount
+(USER_EMAIL, USER_ID, USER_PHONE_NUMBER, GCM_REGISTRATION_ID);         
  ``` 
 
 **2. Send message**:    
@@ -1679,7 +1681,8 @@ You can build your contact service using applozic contact apis. Below is the sam
    [demodictionary setValue:@"aman" forKey:@"displayName"];                  
    [demodictionary setValue:@"aman@applozic.com" forKey:@"email"];                   
    [demodictionary setValue:@"http://images.landofnod.com/is/image
-   /LandOfNod/Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=550&/1308310656/not-giant-enough-letter-a.jpg"             
+   /LandOfNod/Letter_Giant_Enough_A_231533_LL/$web_zoom$&wid=550&hei=
+   550&/1308310656/not-giant-enough-letter-a.jpg"             
    forKey:@"contactImageUrl"];               
    [demodictionary setValue:nil forKey:@"localImageResourceName"];                   
     
