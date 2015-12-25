@@ -3,11 +3,10 @@
 ### Overview      
 
 
-Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com to get the application key.
+Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com to get the application key.       
 
-Instructions for Web Plugin: [https://applozic.readme.io/docs/applozicwebplugin-gettingstarted](https://applozic.readme.io/docs/applozicwebplugin-gettingstarted)
 
-Want to contribute? Drop us a mail at growth@applozic.com     
+Want to contribute? Drop us a mail at ** contact@applozic.com **        
 
 
 ### Getting Started        
@@ -171,13 +170,13 @@ You can call below function to directly open any contact tab dynamically :
 
 ```
  $applozic.fn.applozic('loadTab', 'put-userId-here'); 
- ```
+ ```        
+ 
+ 
 
 
 
-For more customization  visit:
-
-**https://applozic.readme.io/v1.0/docs/customized-applozic-web-plugin**      
+  
 
 
 
