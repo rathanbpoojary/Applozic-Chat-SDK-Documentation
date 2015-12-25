@@ -1706,7 +1706,7 @@ You can build your contact service using applozic contact apis. Below is the sam
  
  
  
-    Contact us at ` growth@applozic.com `
+  Contact us at ` growth@applozic.com `
  
  
  
