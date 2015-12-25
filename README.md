@@ -1121,8 +1121,6 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-
-
 | Response  | Description | 
 | ------------- | ------------- | 
 | error  | In case of any exception contact devashish@applozic.com  |
