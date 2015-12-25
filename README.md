@@ -57,7 +57,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
 ``` 
 <script type="text/javascript" >
   window.applozic.init({userId: 'user id', appId: 'application key',
-  contactDisplayName: displayName, contactDisplayImage: contactImageSrc, desktopNotification: true});                 
+  contactDisplayName: displayName, contactDisplayImage: contactImageSrc, desktopNotification: true});
 </script>
 ```    
 
@@ -449,7 +449,6 @@ Permissions:
   <uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" />              
   <permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" android:protectionLevel="signature" />                  
   <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />                              
-  
   <uses-permission android:name="android.permission.INTERNET" />                   
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  />               
   <uses-permission android:name="android.permission.READ_CONTACTS" />          
@@ -471,7 +470,7 @@ Broadcast Registration For PushNotification:
 
 ** java **    
 ```
-<receiver android:name="com.applozic.mobicomkit.uiwidgets.notification.MTNotificationBroadcastReceiver">               
+<receiver android:name="com.applozic.mobicomkit.uiwidgets.notification.MTNotificationBroadcastReceiver">
    <intent-filter>            
    <action android:name="${applicationId}.send.notification"/>                    
    </intent-filter>           
@@ -511,7 +510,7 @@ Paste the following in your androidmanifest.xml:
     android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />                    
 
 <intent-filter>                  
-    <action android:name="android.intent.action.SEARCH" />                
+    <action android:name="android.intent.action.SEARCH" />
 </intent-filter>                    
 
 
@@ -1266,7 +1265,8 @@ After your app login validation, copy the following code to create applozic user
 ** Objective-C **
 ```
   ALRegisterUserClientService *registerUserClientService = [[ALRegisterUserClientService alloc] init];           
-  [registerUserClientService initWithCompletion:user withCompletion:^(ALRegistrationResponse *rResponse, NSError *error)       
+  [registerUserClientService initWithCompletion:user withCompletion:^(ALRegistrationResponse *rResponse, 
+  NSError *error)       
   {             
   if (error)        
   {             
@@ -1300,7 +1300,8 @@ In your AppDelegate’s **didRegisterForRemoteNotificationsWithDeviceToken **met
 
 ** Objective-C **      
 ```
- - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken       
+ - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)
+   deviceToken       
    {                
   
     const unsigned *tokenBytes = [deviceToken bytes];            
@@ -1623,9 +1624,10 @@ You can build your contact service using applozic contact apis. Below is the sam
     }              
 
 
-   //-----------------------------------------------------------------------------------------------------------------         
-   // Helper method for demo purpose. This method shows possible ways to insert contact and save it in local database.       
-   //-----------------------------------------------------------------------------------------------------------------       
+   //-------------------------------------------------------------------------------------------------------         
+   // Helper method for demo purpose. This method shows possible ways to insert contact and save it in 
+      local database.       
+   //-------------------------------------------------------------------------------------------------------     
 
     - (void) insertInitialContacts{                  
 
@@ -1663,7 +1665,8 @@ You can build your contact service using applozic contact apis. Below is the sam
     
     NSString *jsonString =@"{\"userId\": \"applozic\",\"fullName\": \"Applozic\",
     \"contactNumber\": \"9535008745\",\"displayName\":
-    \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",\"email\":
+    \"Applozic Support\",\"contactImageUrl\": \"https://applozic.com/resources/images/aboutus/rathan.jpg\",
+    \"email\":
     \"devashish@applozic.com\",\"localImageResourceName\":null}";                    
     
     ALContact *contact4 = [[ALContact alloc] initWithJSONString:jsonString];                              
