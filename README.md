@@ -447,7 +447,7 @@ Permissions:
 ** java **      
 ```
   <uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" />              
-  <permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" android:protectionLevel="signature" />                  
+  <permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
   <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />                              
   <uses-permission android:name="android.permission.INTERNET" />                   
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  />               
