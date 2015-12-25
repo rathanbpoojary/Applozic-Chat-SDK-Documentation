@@ -1107,35 +1107,10 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 "agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM",             
 "to":"123","message":"i m fine! what about u?","sent":false,"sendToDevice":true,"shared":false,
 "createdAtTime":1437565473333,   
-"type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]}         
- ```            
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+"type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]}      
 
-
-
-
-
-
+ ```                        
+ 
  
  
  
