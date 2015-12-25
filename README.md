@@ -1698,7 +1698,13 @@ You can build your contact service using applozic contact apis. Below is the sam
    [theDBHandler addListOfContacts:@[contact1, contact2, contact3, contact4, contact5]];                                
    }                                                    
   @end                     
- ```
+ ```          
+ 
+ 
+ 
+ 
+ 
+ Contact us at growth@applozic.com
  
  
  
