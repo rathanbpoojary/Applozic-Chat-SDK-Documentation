@@ -488,7 +488,7 @@ Paste the following in your androidmanifest.xml:
 
 ** java **    
 ```
-<activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"                            
+<activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
      android:configChanges="keyboardHidden|orientation|screenSize"                          
      android:label="@string/app_name"                  
      android:parentActivityName="<APP_PARENT_ACTIVITY>"                        
@@ -525,7 +525,7 @@ Paste the following in your androidmanifest.xml:
     <!-- Parent activity meta-data to support API level 7+ -->           
     <meta-data android:name="android.support.PARENT_ACTIVITY"          
     android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />              
-    </activity>                                  
+</activity>                                  
  
 <service android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService" android:exported="false" />                    
 
@@ -545,7 +545,7 @@ Paste the following in your androidmanifest.xml:
 
 
 <receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver">           
-    <intent-filter> <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> </intent-filter>                     
+    <intent-filter> <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> </intent-filter>
 </receiver>                    
 ```
 
