@@ -1109,14 +1109,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 "createdAtTime":1437565473333,   
 "type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]}
 
-```              
-
-
-
-
-
-
-
+ ```              
 
 
 
