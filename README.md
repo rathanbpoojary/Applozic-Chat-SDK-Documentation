@@ -3,8 +3,9 @@
 ### Overview      
 
 
-Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at [https://www.applozic.com][(https://www.applozic.com) (target="_blank")] to get the application key.       
-[https://www.applozic.com](https://www.applozic.com "rathan" target="_blank")
+Integrate messaging into your mobile apps and website without developing or maintaining any infrastructure. Register at https://www.applozic.com         
+
+
 
 Want to contribute? Drop us a mail at   ` contact@applozic.com `    
 
