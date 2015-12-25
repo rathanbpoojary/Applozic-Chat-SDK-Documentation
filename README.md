@@ -181,7 +181,7 @@ For more customization  visit:
 
 
 
-### Customized - Applozic-Web-Plugin     
+### Customization     
 
 
 
@@ -741,7 +741,7 @@ Sample app with integration is available under [app](https://github.com/AppLozic
 
 
 
-### MobiComKit module             
+### Messages             
 
 
 
@@ -812,7 +812,7 @@ ii) Get messages of logged in user with another user by passing userId, startTim
 
 
 
-### Building Own Contact List             
+###  Contacts           
 
 
 
