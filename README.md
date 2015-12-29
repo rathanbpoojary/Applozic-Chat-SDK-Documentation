@@ -1253,7 +1253,7 @@ ii ) Go to Build Phase. Expand  Embedded frameworks and add applozic framework.
 
 
 
-![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/adding-applozic-framewok.png)        
+![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/adding-applozic-framework.png)        
 
 
 
