@@ -372,8 +372,8 @@ To integrate messaging into your android app, register at [Applozic](https://www
 ** Step 1: Add the following in build.gradle **:      
 
 
-** java **     
-` compile 'com.applozic.communication.uiwidget:mobicomkitui:3.013' `      
+**java**  
+`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.014' `      
 
 
 Add the following in gradle android target:      
@@ -397,7 +397,8 @@ Applozic Application Key:
 
 ** java **     
 ```
-<meta-data android:name="com.applozic.application.key" android:value="YOUR_APPLOZIC_APPLICATION_KEY" /> 
+<meta-data android:name="com.applozic.application.key"
+           android:value="YOUR_APPLOZIC_APPLICATION_KEY" /> 
 
 ```         
    
@@ -405,7 +406,8 @@ Applozic Application URL:
    
    ** java **     
    ```
-<meta-data android:name="com.applozic.server.url" android:value="https://apps.applozic.com" /> 
+<meta-data android:name="com.applozic.server.url"
+           android:value="https://apps.applozic.com" /> 
    ```
     
     
@@ -413,32 +415,46 @@ Applozic Application URL:
  
  ** java **       
 ```
-<meta-data android:name="com.applozic.mobicomkit.notification.icon" android:resource="YOUR_LAUNCHER_ICON" />                    
+<meta-data android:name="com.applozic.mobicomkit.notification.icon" 
+           android:resource="YOUR_LAUNCHER_ICON" />  
+          
 ```   
 ```
-<meta-data android:name="com.package.name" android:value="${applicationId}" /> 
+<meta-data android:name="com.applozic.mobicomkit.notification.smallIcon"
+           android:resource="YOUR_LAUNCHER_SMALL_ICON" />
+```
+```
+<meta-data android:name="com.package.name" 
+           android:value="${applicationId}" /> 
+           
 ```
    
    
    **Note**: If you are **not using gradle build** you need to replace ${applicationId}  with your Android app package name
 
+Invite Message:
+
+**Java**
+```
+<meta-data android:name="share_text"
+          android:value="YOUR INVITE MESSAGE" />
+  ```
 
 Attachment Folder configuration:         
 
 
 ** java **      
 ```
-<meta-data android:name="main_folder_name" android:value="@string/default_media_location_folder" /> 
+<meta-data android:name="main_folder_name"
+           android:value="@string/default_media_location_folder" /> 
 ```
-  
-  
   
   Define below in your string.xml.          
   
   
   ** java **     
 ```
-<string name="default_media_location_folder">/<YOUR_APP_NAME></string> 
+<string name="default_media_location_folder"><YOUR_APP_NAME></string> 
 ```
   
   
@@ -454,23 +470,23 @@ Permissions:
 
 ** java **      
 ```
-  <uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" />              
-  <permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />                              
-  <uses-permission android:name="android.permission.INTERNET" />                   
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  />               
-  <uses-permission android:name="android.permission.READ_CONTACTS" />          
-  <uses-permission android:name="android.permission.WRITE_CONTACTS" />            
-  <uses-permission android:name="android.permission.VIBRATE"/>             
-  <uses-permission android:name="android.permission.CALL_PHONE"/>             
-  <uses-permission android:name="android.permission.READ_PROFILE"" />           
-  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>                
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />                 
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />               
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />               
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" />
+<permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  />
+<uses-permission android:name="android.permission.READ_CONTACTS" />
+<uses-permission android:name="android.permission.WRITE_CONTACTS" />
+<uses-permission android:name="android.permission.VIBRATE"/>
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.CALL_PHONE"/>
+<uses-permission android:name="android.permission.READ_PROFILE"" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
   ```
-
 
 
 Broadcast Registration For PushNotification:        
@@ -480,7 +496,7 @@ Broadcast Registration For PushNotification:
 ```
 <receiver android:name="com.applozic.mobicomkit.uiwidgets.notification.MTNotificationBroadcastReceiver">
    <intent-filter>            
-   <action android:name="${applicationId}.send.notification"/>                    
+        <action android:name="${applicationId}.send.notification"/>                    
    </intent-filter>           
 </receiver>                  
 ```
@@ -496,66 +512,72 @@ Paste the following in your androidmanifest.xml:
 
 ** java **    
 ```
-<activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
-     android:configChanges="keyboardHidden|orientation|screenSize"                          
-     android:label="@string/app_name"                  
-     android:parentActivityName="<APP_PARENT_ACTIVITY>"                        
-     android:theme="@style/MobiComAppBaseTheme">                         
-     <!-- Parent activity meta-data to support API level 7+ -->                               
-     <meta-data  android:name="android.support.PARENT_ACTIVITY" android:value="<APP_PARENT_ACTIVITY>" />
-</activity>                                                 
+ <activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
+           android:configChanges="keyboardHidden|orientation|screenSize"
+           android:label="@string/app_name"
+           android:parentActivityName="<APP_PARENT_ACTIVITY>"
+           android:theme="@style/ApplozicTheme"
+           android:launchMode="singleTask" >
+      <!-- Parent activity meta-data to support API level 7+ -->
+<meta-data
+           android:name="android.support.PARENT_ACTIVITY"
+           android:value="<APP_PARENT_ACTIVITY>" />
+ </activity>
+                   
+<activity android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity"
+          android:configChanges="keyboardHidden|orientation|screenSize"
+          android:label="@string/activity_contacts_list"                            android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
+          android:theme="@style/ApplozicTheme"
+          android:windowSoftInputMode="adjustResize">
+     <!-- Parent activity meta-data to support API level 7+ -->
+<meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />
+         <intent-filter>
+                 <action android:name="android.intent.action.SEARCH" />
+         </intent-filter>
+<meta-data
+          android:name="android.app.searchable"
+          android:resource="@xml/searchable_contacts" />
+</activity>
 
+<activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.FullScreenImageActivity"
+          android:configChanges="keyboardHidden|orientation|screenSize"
+          android:label="Image"
+ android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
+          android:theme="@style/Applozic_FullScreen_Theme">
+    <!-- Parent activity meta-data to support API level 7+ -->
+<meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />
+</activity>
+                   
+<service android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService"
+          android:exported="false" />
+              
+<service android:name="org.eclipse.paho.android.service.MqttService"/>
 
-<activity                                                 
-    android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity"              
-    android:configChanges="keyboardHidden|orientation|screenSize"                
-    android:label="@string/activity_contacts_list"               
-    android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"               
-    android:theme="@style/ContactTheme"              
-    android:windowSoftInputMode="adjustResize">              
-    <!-- Parent activity meta-data to support API level 7+ -->               
-    <meta-data android:name="android.support.PARENT_ACTIVITY"
-    android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />                    
+<receiver android:name="com.applozic.mobicomkit.broadcast.NotificationBroadcastReceiver">
+         <intent-filter>
+                 <action android:name="applozic.LAUNCH_APP" />
+         </intent-filter>
+<meta-data
+          android:name="activity.open.on.notification"
+          android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />
+</receiver>
 
-<intent-filter>                  
-    <action android:name="android.intent.action.SEARCH" />
-</intent-filter>                    
+<receiver android:name="com.applozic.mobicomkit.broadcast.TimeChangeBroadcastReceiver">
+         <intent-filter>
+                 <action android:name="android.intent.action.TIME_SET" />
+                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+         </intent-filter>
+</receiver>
 
-
-<meta-data android:name="android.app.searchable" android:resource="@xml/searchable_contacts" /> </activity>                             
-
-<activity             
-    android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.FullScreenImageActivity"        
-    android:configChanges="keyboardHidden|orientation|screenSize"             
-    android:label="Image"          
-    android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"             
-    android:theme="@style/MobiComAppBaseTheme">              
-    <!-- Parent activity meta-data to support API level 7+ -->           
-    <meta-data android:name="android.support.PARENT_ACTIVITY"          
-    android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />              
-</activity>                                  
- 
-<service android:name="com.applozic.mobicomkit.api.conversation.MessageIntentService" 
-   android:exported="false" />                    
-
-<receiver android:name="com.applozic.mobicomkit.broadcast.NotificationBroadcastReceiver">                                  
-    <intent-filter> <action android:name="applozic.LAUNCH_APP" /> </intent-filter>                      
-    <meta-data android:name="activity.open.on.notification"                      
-    android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />               
-</receiver>                   
-
-
-<receiver android:name="com.applozic.mobicomkit.broadcast.TimeChangeBroadcastReceiver">                 
-    <intent-filter>           
-    <action android:name="android.intent.action.TIME_SET" />          
-    <action android:name="android.intent.action.TIMEZONE_CHANGED" />                 
-    </intent-filter>          
-</receiver>              
-
-
-<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver">           
-    <intent-filter> <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> </intent-filter>
-</receiver>                    
+<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver">
+          <intent-filter>
+                  <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+          </intent-filter>
+</receiver>                  
 ```
 
 
@@ -750,7 +772,6 @@ Sample app with integration is available under [app](https://github.com/AppLozic
 
 
 
-
 ### Messages             
 
 
@@ -893,6 +914,38 @@ AppContactService.java provides methods you need to add, delete and update conta
 **updateContact(Contact contact)** : Update contact.
 
 **upsert(Contact contact)** : update or insert contact.       
+
+
+
+###  Migrating from version 3.0.14
+
+
+
+***Migrating to latest version of Applozic android Sdk***
+
+
+
+**Replace the following in build.gradle :**
+
+**java**  
+`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.016' `
+
+
+
+**Addition of Services in androidmanifest.xml**
+
+**java**
+```
+<service android:name="com.applozic.mobicomkit.api.conversation.ApplozicIntentService"
+         android:exported="false" />
+             
+<service android:name="com.applozic.mobicomkit.api.conversation.ApplozicMqttIntentService"
+         android:exported="false" />
+```
+
+
+
+
 
 
 
