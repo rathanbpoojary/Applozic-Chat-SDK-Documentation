@@ -434,7 +434,7 @@ Applozic Application URL:
 
 Invite Message:
 
-**Java**
+**java**
 ```
 <meta-data android:name="share_text"
           android:value="YOUR INVITE MESSAGE" />
@@ -526,7 +526,8 @@ Paste the following in your androidmanifest.xml:
                    
 <activity android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity"
           android:configChanges="keyboardHidden|orientation|screenSize"
-          android:label="@string/activity_contacts_list"                            android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
+          android:label="@string/activity_contacts_list"
+          android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
           android:theme="@style/ApplozicTheme"
           android:windowSoftInputMode="adjustResize">
      <!-- Parent activity meta-data to support API level 7+ -->
