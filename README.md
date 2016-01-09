@@ -1244,6 +1244,218 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 | UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |         
 
 
+
+
+****Group Creation **** 
+
+
+
+**GROUP CREATION URL**: https://apps.applozic.com/rest/ws/group/create 
+
+**Method Type**: POST 
+
+**ContentType**: application/json, application/xml
+
+
+
+**Parameters**: GroupInfo (json object) will be passed as a parameter with following properties :-    
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| groupName | Yes  |   | Name of the group |
+| groupMemberList | Yes  |   |List of name of the  group members |
+| Type | No  | public  | Type of the group |
+
+
+
+**Parameter Example**:   (Suppose "TestUser" is the user calling group creation API)
+
+
+
+** json **  
+
+```
+{"groupName":"BOYZZ","groupMemberList":["A","B","C"]}
+```
+
+
+ 
+**Response**: ApiResponse (json object)  with success status :-  
+
+
+
+** json **                         
+```
+{"status":"success","generatedAt":1452342819495,"response":{"id":176,"name":"BOYZZ","adminName":"TestUser","membersName":["A","TestUser","B","C"],"unreadCount":0,"type":2}}
+```
+
+
+
+****Groups List Of User**** 
+
+
+
+**LIST URL**:  https://apps.applozic.com/rest/ws/group/list 
+
+**Method Type**: GET
+
+
+
+**Parameters**:        
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| updatedAt | No  |   | lastSyncTime to the server  |
+ 
+
+
+**Response**:   ApiResponse (json object)  with success status :-         
+
+
+
+ ```  
+{"status":"success","generatedAt":1452345715245,"response":[{"id":177,"name":"BOYZZ","adminName":"TestUser","membersName":["AB","B","C","TestUser"],"unreadCount":0,"type":2}]}   
+
+ ```
+
+
+
+**Note**: Next time when sync to  the server to get the group list of user pass updatedAt=lastSyncTime("generatedAt":1452345715245) to get the list of newly added  and modified  groups  of the user .
+
+
+
+
+
+****Delete group**** 
+
+
+
+**DELETE GROUP URL**:  https://apps.applozic.com/rest/ws/group/delete 
+
+**Method Type**: GET
+
+
+
+**Parameters**: 
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| id   | Yes  |   | group unique id  |
+
+
+
+**Response**:  ApiResponse (json object)  with success status :-  
+
+
+
+ ```  
+{"status":"success","generatedAt":1452347180639,"response":"success"}   
+
+ ```
+
+
+
+**Note**:Only Admin User can delete the group otherwise you can get following error.
+
+
+
+**Response**:  ApiResponse (json object)  with error status :-  
+
+
+
+ ```  
+{"status":"error","errorResponse":[{"errorCode":"AL-UN-01","description":"unauthorized user","displayMessage":"Unable to process"}],"generatedAt":1452348983616} 
+
+ ```
+
+
+
+
+****Remove  Group member**** 
+
+
+
+**LIST URL**:  https://apps.applozic.com/rest/ws/group/remove/member 
+
+**Method Type**: GET
+
+
+
+**Parameters**: 
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| id   | Yes  |   | group unique id  |
+| userId   | Yes  |   | name of the user want to remove from group  |
+
+
+
+**Response**:  ApiResponse (json object)  with success status :-  
+
+
+
+ ```  
+{"status":"success","generatedAt":1452347180639,"response":"success"}   
+
+ ```
+
+
+
+**Note**:Only Admin User can remove the grop member otherwise you can get following error.
+
+
+
+**Response**:  ApiResponse (json object)  with error status :-  
+
+
+
+ ```  
+{"status":"error","errorResponse":[{"errorCode":"AL-UN-01","description":"unauthorized user","displayMessage":"Unable to process"}],"generatedAt":1452348983616} 
+
+ ```
+
+
+****Leave Group**** 
+
+
+
+**LIST URL**:  https://apps.applozic.com/rest/ws/group/left 
+
+**Method Type**: GET
+
+
+
+**Parameters**: 
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| id   | Yes  |   | group unique id  |
+
+
+
+
+**Response**:  ApiResponse (json object)  with success status :-  
+
+
+
+ ```  
+{"status":"success","generatedAt":1452347180639,"response":"success"}   
+
+ ```
+
+
+
+
  # IOS SDK           
 
 
