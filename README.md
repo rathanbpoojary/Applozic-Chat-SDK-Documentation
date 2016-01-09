@@ -1387,7 +1387,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**LIST URL**:  https://apps.applozic.com/rest/ws/group/remove/member 
+**REMOVE GROUP MEMBER URL**:  https://apps.applozic.com/rest/ws/group/remove/member 
 
 **Method Type**: GET
 
@@ -1433,7 +1433,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**LIST URL**:  https://apps.applozic.com/rest/ws/group/left 
+**LEAVE GROUP URL**:  https://apps.applozic.com/rest/ws/group/left 
 
 **Method Type**: GET
 
@@ -1461,7 +1461,78 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
+****Add Group Member****
 
+
+
+**ADD GROUP MEMBER URL**:  https://apps.applozic.com/rest/ws/group/add/member 
+
+**Method Type**: GET
+
+
+
+**Parameters**: 
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| id   | Yes  |   | group unique id  |
+| userId   | Yes  |   | name of the user want to add to the group  |
+
+
+
+**Response**:  ApiResponse (json object)  with success status :-  
+
+
+
+ ```  
+{"status":"success","generatedAt":1452347180639,"response":"success"}   
+
+ ```
+
+
+
+****Change Group Name****
+
+
+
+**CHANGE GROUP NAME URL**:  https://apps.applozic.com/rest/ws/group/change/name 
+
+**Method Type**: POST
+
+**ContentType**: application/json, application/xml
+
+
+
+**Parameters**:  ChangeGroupNameInfo (json object) will be passed as a parameter with following properties :-    
+
+
+
+| Parameter  | Required | Default  | Description |
+| ------------- | ------------- | ------------- | ------------- |
+| groupId| Yes  |   | group unique id |
+| newName | Yes  |   |new name of group |
+
+
+
+
+**Response**:  ApiResponse (json object)  with success status :-  
+
+
+
+ ```  
+{"status":"success","generatedAt":1452347180639,"response":"success"}   
+
+ ```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  # IOS SDK           
 
 
