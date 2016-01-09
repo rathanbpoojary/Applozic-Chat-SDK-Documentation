@@ -373,7 +373,7 @@ To integrate messaging into your android app, register at [Applozic](https://www
 
 
 **java**  
-`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.014' `      
+`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.016' `      
 
 
 Add the following in gradle android target:      
@@ -557,6 +557,12 @@ Paste the following in your androidmanifest.xml:
           android:exported="false" />
               
 <service android:name="org.eclipse.paho.android.service.MqttService"/>
+
+<service android:name="com.applozic.mobicomkit.api.conversation.ApplozicIntentService"
+         android:exported="false" />
+             
+<service android:name="com.applozic.mobicomkit.api.conversation.ApplozicMqttIntentService"
+         android:exported="false" />
 
 <receiver android:name="com.applozic.mobicomkit.broadcast.NotificationBroadcastReceiver">
          <intent-filter>
