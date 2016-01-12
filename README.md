@@ -386,7 +386,9 @@ packagingOptions
  exclude 'META-INF/NOTICE'         
  exclude 'META-INF/LICENSE'      
  exclude 'META-INF/LICENSE.txt'    
- exclude 'META-INF/NOTICE.txt'         
+ exclude 'META-INF/NOTICE.txt' 
+ exclude 'META-INF/ECLIPSE_.SF'
+ exclude 'META-INF/ECLIPSE_.RSA'
  }                
 ```
 
