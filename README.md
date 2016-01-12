@@ -480,7 +480,7 @@ Permissions:
 <uses-permission android:name="android.permission.VIBRATE"/>
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 <uses-permission android:name="android.permission.CALL_PHONE"/>
-<uses-permission android:name="android.permission.READ_PROFILE"" />
+<uses-permission android:name="android.permission.READ_PROFILE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
