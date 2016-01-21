@@ -373,7 +373,7 @@ To integrate messaging into your android app, register at [Applozic](https://www
 
 
 **java**  
-`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.016' `      
+`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.019' `      
 
 
 Add the following in gradle android target:      
@@ -583,8 +583,10 @@ Paste the following in your androidmanifest.xml:
          </intent-filter>
 </receiver>
 
-<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver">
+<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver"
+          android:exported="true" android:enabled="true">
           <intent-filter>
+                  <action android:name="android.intent.action.BOOT_COMPLETED" />
                   <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
           </intent-filter>
 </receiver>                  
@@ -927,7 +929,7 @@ AppContactService.java provides methods you need to add, delete and update conta
 
 
 
-###  Migrating from version 3.0.14
+###  Migrating from version 3.016
 
 
 
@@ -938,24 +940,29 @@ AppContactService.java provides methods you need to add, delete and update conta
 **Replace the following in build.gradle :**
 
 **java**  
-`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.016' `
+`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.019' `
 
 
 
-**Addition of Services in androidmanifest.xml**
+**Addition of permission in androidmanifest.xml**
 
 **java**
+
 ```
-<service android:name="com.applozic.mobicomkit.api.conversation.ApplozicIntentService"
-         android:exported="false" />
-             
-<service android:name="com.applozic.mobicomkit.api.conversation.ApplozicMqttIntentService"
-         android:exported="false" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 ```
 
+**Replace the old ConnectivityReceiver in androidmanifest.xml with**
+```
+<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver" 
+           android:exported="true" android:enabled="true">   
+          <intent-filter>
+                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+          </intent-filter>
+</receiver>
 
-
-
+  ```
 
 
 
