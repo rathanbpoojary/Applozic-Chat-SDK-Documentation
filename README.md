@@ -618,7 +618,8 @@ public void onFailure(RegistrationResponse registrationResponse, Exception excep
 }};                      
 
 User user = new User();          
-user.setUserId(userId);          
+user.setUserId(userId); 
+user.setDisplayName(displayName); 
 user.setEmail(email); //optional                        
 new UserLoginTask(user, listener, this).execute((Void) null);                                      
 ```
@@ -673,7 +674,7 @@ Add the following in your GcmBroadcastReceiver's onReceive method.
 
 ** java **       
 ```
-if(MobiComPushReceiver.isMobiComPushNotification(context, intent))       
+if(MobiComPushReceiver.isMobiComPushNotification(intent))       
 {            
 MobiComPushReceiver.processMessageAsync(context, intent);               
 return;          
@@ -695,8 +696,8 @@ startActivity(intent);
  ** java **           
 ```
 Intent intent = new Intent(this, ConversationActivity.class);            
-intent.putExtra("userId", "devashish@applozic.com");             
-intent.putExtra("displayName", "Devashish Mamgain"); //put it for displaying the title.             
+intent.putExtra(ConversationUIService.USER_ID, "devashish@applozic.com");             
+intent.putExtra(ConversationUIService.DISPLAY_NAME, "Devashish Mamgain"); //put it for displaying the title.             
 startActivity(intent);                              
 ```
 
