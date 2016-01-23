@@ -372,13 +372,13 @@ To integrate messaging into your android app, register at [Applozic](https://www
 ** Step 1: Add the following in build.gradle **:      
 
 
-**java**  
+
 `compile 'com.applozic.communication.uiwidget:mobicomkitui:3.019' `      
 
 
 Add the following in gradle android target:      
 
-** java **        
+
 ```
 packagingOptions    
  {           
@@ -397,7 +397,7 @@ packagingOptions
 Applozic Application Key:     
 
 
-** java **     
+
 ```
 <meta-data android:name="com.applozic.application.key"
            android:value="YOUR_APPLOZIC_APPLICATION_KEY" /> 
@@ -406,7 +406,7 @@ Applozic Application Key:
    
 Applozic Application URL:        
    
-   ** java **     
+   
    ```
 <meta-data android:name="com.applozic.server.url"
            android:value="https://apps.applozic.com" /> 
@@ -415,7 +415,7 @@ Applozic Application URL:
     
  Applozic Notification package name and launcher icon:        
  
- ** java **       
+ 
 ```
 <meta-data android:name="com.applozic.mobicomkit.notification.icon" 
            android:resource="YOUR_LAUNCHER_ICON" />  
@@ -436,7 +436,7 @@ Applozic Application URL:
 
 Invite Message:
 
-**java**
+
 ```
 <meta-data android:name="share_text"
           android:value="YOUR INVITE MESSAGE" />
@@ -445,7 +445,7 @@ Invite Message:
 Attachment Folder configuration:         
 
 
-** java **      
+    
 ```
 <meta-data android:name="main_folder_name"
            android:value="@string/default_media_location_folder" /> 
@@ -454,7 +454,7 @@ Attachment Folder configuration:
   Define below in your string.xml.          
   
   
-  ** java **     
+     
 ```
 <string name="default_media_location_folder"><YOUR_APP_NAME></string> 
 ```
@@ -470,7 +470,7 @@ Permissions:
 
 
 
-** java **      
+
 ```
 <uses-permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" />
 <permission android:name="<APP_PKG_NAME>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
@@ -495,7 +495,7 @@ Permissions:
 Broadcast Registration For PushNotification:        
 
 
-** java **    
+   
 ```
 <receiver android:name="com.applozic.mobicomkit.uiwidgets.notification.MTNotificationBroadcastReceiver">
    <intent-filter>            
@@ -513,7 +513,7 @@ Paste the following in your androidmanifest.xml:
 
 
 
-** java **    
+   
 ```
  <activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
            android:configChanges="keyboardHidden|orientation|screenSize"
@@ -603,7 +603,7 @@ Replace APP_PARENT_ACTIVITY with your app's parent activity.
 
 
 
-** java **        
+     
 ```
 UserLoginTask.TaskListener listener = new UserLoginTask.TaskListener() {                  
 
@@ -644,7 +644,7 @@ SenderId is a unique numerical value created when you configure your API project
 ```
 
 If you already have a GCM code in your app, then copy the following code at the place where you are getting the GCM registration id.       
-** java **     
+     
 ```
 PushNotificationTask pushNotificationTask = null         
 PushNotificationTask.TaskListener listener = new PushNotificationTask.TaskListener()   
@@ -672,7 +672,7 @@ Add the following in your GcmBroadcastReceiver's onReceive method.
 
 
 
-** java **       
+       
 ```
 if(MobiComPushReceiver.isMobiComPushNotification(intent))       
 {            
@@ -684,7 +684,7 @@ return;
 
 **Step 6: For starting the messaging activity**:        
 
-** java **      
+      
 ```
 Intent intent = new Intent(this, ConversationActivity.class);            
 startActivity(intent);                               
@@ -693,7 +693,7 @@ startActivity(intent);
  
  For starting individual conversation thread, set "userId" in intent:        
  
- ** java **           
+           
 ```
 Intent intent = new Intent(this, ConversationActivity.class);            
 intent.putExtra(ConversationUIService.USER_ID, "devashish@applozic.com");             
@@ -707,7 +707,7 @@ For easy insertion of Admin/Support Contact information, please changes followin
 
 
 
-** java **          
+          
 ```
 <string name="support_contact_display_name">AppLozic Support</string>               
 <string name="support_contact_userId">applozic</string>             
@@ -723,7 +723,7 @@ support_contact_image_url also supports url eg:
 
 
 
-** java **       
+
  new UserClientService(this).logout();      
  
  
@@ -733,7 +733,7 @@ support_contact_image_url also supports url eg:
  
  
  
- ** java **     
+ 
 ```
  #keep json classes                
  -keepclassmembernames class * extends com.applozic.mobicomkit.api.JsonMarker         
@@ -800,7 +800,8 @@ Classes ending with *ClientService.java interacts with the server.
    
 Class: com.applozic.mobicomkit.api.account.register.RegisterUserClientService      
 
-** java **          
+
+
 ```
 new RegisterUserClientService(activity).createAccount
 (USER_EMAIL, USER_ID, USER_PHONE_NUMBER, GCM_REGISTRATION_ID);         
@@ -811,7 +812,7 @@ new RegisterUserClientService(activity).createAccount
 Class: com.applozic.mobicomkit.api.conversation.MobiComConversationService         
 
 
-**  java **      
+
 ```
  public void sendMessage(Message message)        
  {             
@@ -833,7 +834,7 @@ i) Get single latest message from each conversation
 
 
 
-** java **      
+
 ```
  public synchronized List<Message> getLatestMessagesGroupByPeople()        
  {            
@@ -847,7 +848,7 @@ ii) Get messages of logged in user with another user by passing userId, startTim
 
 
 
-** java **    
+
 ```
  public List<Message> getMessages(String userId, Long startTime, Long endTime)        
  {            
@@ -940,14 +941,14 @@ AppContactService.java provides methods you need to add, delete and update conta
 
 **Replace the following in build.gradle :**
 
-**java**  
+
 `compile 'com.applozic.communication.uiwidget:mobicomkitui:3.019' `
 
 
 
 **Addition of permission in androidmanifest.xml**
 
-**java**
+
 
 ```
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
