@@ -1533,7 +1533,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**Response**:  ApiResponse (json object)  with success status :-  
+**Response**: Response Json with success status :-  
 
 
 
