@@ -1276,15 +1276,15 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**Parameters**: GroupInfo (json object) will be passed as a parameter with following properties :-    
+**Parameters**: Json will be passed as a parameter with following properties :-    
 
 
 
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
 | groupName | Yes  |   | Name of the group |
-| groupMemberList | Yes  |   |List of name of the  group members |
-| Type | No  | public  | Type of the group |
+| groupMemberList | Yes  |   |List of names of the  group members |
+| type | No  | public  | Type of the group |
 
 
 
@@ -1300,7 +1300,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
  
-**Response**: ApiResponse (json object)  with success status :-  
+**Response**: Response Json  with success status :-  
 
 
 
@@ -1309,6 +1309,10 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 {"status":"success","generatedAt":1452342819495,"response":{"id":176,"name":"BOYZZ","adminName":"TestUser","membersName":["A","TestUser","B","C"],"unreadCount":0,"type":2}}
 ```
 
+
+
+
+**Note**: "type":2 represents the public Group.
 
 
 ****Groups List Of User**** 
@@ -1331,7 +1335,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
  
 
 
-**Response**:   ApiResponse (json object)  with success status :-         
+**Response**:   Response Json with success status :-         
 
 
 
@@ -1342,7 +1346,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**Note**: Next time when sync to  the server to get the group list of user pass updatedAt=lastSyncTime("generatedAt":1452345715245) to get the list of newly added  and modified  groups  of the user .
+**Note**: Next time when sync to  the server you have option to get information about only modified group and newly added group of that user,for that you have to pass "updatedAt" parameter in Api call. Whenever last time you interacted our server,in response Json you get "generatedAt" parameter ,that value will be used for "updatedAt"("generatedAt":1452345715245) to get the list of only newly added  and modified groups  of the user.
 
 
 
@@ -1364,11 +1368,11 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| id   | Yes  |   | group unique id  |
+| groupId   | Yes  |   | group unique id  |
 
 
 
-**Response**:  ApiResponse (json object)  with success status :-  
+**Response**:  Response Json  with success status :-  
 
 
 
@@ -1383,7 +1387,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**Response**:  ApiResponse (json object)  with error status :-  
+**Response**:  Json with error status :-  
 
 
 
@@ -1411,12 +1415,12 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| id   | Yes  |   | group unique id  |
+| groupId   | Yes  |   | group unique id  |
 | userId   | Yes  |   | name of the user want to remove from group  |
 
 
 
-**Response**:  ApiResponse (json object)  with success status :-  
+**Response**:  Response Json  with success status :-  
 
 
 
@@ -1431,7 +1435,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**Response**:  ApiResponse (json object)  with error status :-  
+**Response**: Json with error status :-  
 
 
 
@@ -1457,12 +1461,12 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| id   | Yes  |   | group unique id  |
+| groupId   | Yes  |   | group unique id  |
 
 
 
 
-**Response**:  ApiResponse (json object)  with success status :-  
+**Response**: Response Json with success status :-  
 
 
 
@@ -1489,12 +1493,12 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| id   | Yes  |   | group unique id  |
+| groupId   | Yes  |   | group unique id  |
 | userId   | Yes  |   | name of the user want to add to the group  |
 
 
 
-**Response**:  ApiResponse (json object)  with success status :-  
+**Response**:  Response Json with success status :-  
 
 
 
@@ -1517,7 +1521,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**Parameters**:  ChangeGroupNameInfo (json object) will be passed as a parameter with following properties :-    
+**Parameters**:  Json will be passed as a parameter with following properties :-    
 
 
 
