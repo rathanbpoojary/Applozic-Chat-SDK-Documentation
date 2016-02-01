@@ -985,11 +985,11 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 
-**Create User Account URL**: https://apps.applozic.com/rest/ws/registration/v1/register
+**Create User Account URL**: https://apps.applozic.com/rest/ws/register/client
 **Method Type**: POST
 **Content-Type**: application/json, application/xml
 
-**Parameters**: user (json object) will be passed as a parameter with following properties :-         
+**Parameters**: Json will be passed as a parameter with following properties :-         
 
 
 
@@ -999,14 +999,15 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 | userId  | Yes  |   | User name  |
 | emailId  | No  | null  | User email address  |
 | password  | No  | null  | User account password  |
-| registrationId  | No  | null  | User device registrationId  |
-| contactNumber  | No  | null  | User contact number  |
-| countryCode  | No  | null | User country code  |
-| emailVerified  | No  | false  | If user email address is verified then true or else false  |
-| timezone  | No  | Asia/Calcutta  | User device timezone  |
-| roleName  | No  | USER  | Value should be USER  |
-| applicationId  | Yes  |   | Key of the application which you had created.  |
-| deviceType  | Yes  |   | Value should be 1  |       
+| displayName  | No  |   | Name you want to display to other user  |  
+| applicationId  | Yes  |   | Your Applozic Application key configured in dashboard  |
+| deviceType  | Yes  |   | 1 or 4   | 
+
+
+
+
+**Note**:deviceType value should be "1" for Android device and "4" for Ios device.
+
 
 
 
@@ -1015,25 +1016,42 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 ** json **                         
 ```
-{"userId":"userUniqueId","password":"password","deviceType":1,"emailId":"abc@gmail.com",
-"applicationId":"applozic-sample-app","emailVerified":1} 
+{"userId":"abc","deviceType":"4","applicationId":"applozic-sample-app"
+}
 ```
 
 
-**Response**: registrationResponse (json object) will be passed as a response to request with following properties :-         
+**Response**: Response Json to request with following properties :-         
 
 
 
 | Response  | Description |
 | ------------- | ------------- |
-| message | Description whether user successfully registered or not. One of the following :REGISTERED, INVALID_EMAILID, INVALID_APPLICATIONID, PASSWORD_REQUIRED, UPDATED |
-| deviceKeyString | User device key  |
-| suUserKeyString  | User key  |
-| LastSyncTime  | Time in miliseconds when user device last synced with server  |          
+| message | One of the following is returned:REGISTERED,REGISTERED.WITHOUTREGISTRATIONID, UPDATED |
+| deviceKey | User device key  |
+| userKey  | User key  |
+| lastSyncTime  | Time in miliseconds when user device last synced with server  |  
+| currentTimeStamp  | Time in miliseconds when response is return from server | 
 
 
 
-***Note** :- If registration process failed then only message property come in json response with description
+***Note** :- If registration process failed then  json response with description
+
+
+
+
+** json **                         
+```
+{  "message": "INCOMPLETE_EMAILID","currentTimeStamp": 1454328359265 }
+```
+
+
+
+** json **                         
+```
+{  "message": "INVALID_APPLICATIONID","currentTimeStamp": 1454328359295 }
+```
+
 
 Create Account Response Example:
 
