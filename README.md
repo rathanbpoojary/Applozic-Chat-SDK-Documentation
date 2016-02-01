@@ -1035,6 +1035,14 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 
+
+** json **                         
+```
+{    "message": "REGISTERED.WITHOUTREGISTRATIONID","userKey": "21fea543-2ade-494f-b905-6bab308d1b4f",
+"deviceKey": "09c5d869-6d38-4d6b-9ebf-9de16cdab176","lastSyncTime": 1454328502029, "currentTimeStamp": 1454328502023}
+```
+
+
 ***Note** :- If registration process failed then  json response with description
 
 
