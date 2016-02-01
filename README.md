@@ -986,7 +986,9 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 **Create User Account URL**: https://apps.applozic.com/rest/ws/register/client
+
 **Method Type**: POST
+
 **Content-Type**: application/json, application/xml
 
 **Parameters**: Json will be passed as a parameter with following properties :-         
