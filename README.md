@@ -1021,15 +1021,15 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 ```
 
 
-**Response**: Response Json to request with following properties :-         
+**Response**:  In case of success Response Json to request with following properties :-         
 
 
 
 | Response  | Description |
 | ------------- | ------------- |
 | message | One of the following is returned:REGISTERED,REGISTERED.WITHOUTREGISTRATIONID, UPDATED |
-| deviceKey | User device key  |
-| userKey  | User key  |
+| userKey | User key  |
+| deviceKey  | User device key |
 | lastSyncTime  | Time in miliseconds when user device last synced with server  |  
 | currentTimeStamp  | Time in miliseconds when response is return from server | 
 
@@ -1043,7 +1043,7 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 ```
 
 
-***Note** :- If registration process failed then  json response with description
+***Note** :- If registration process failed then  json response with description :-
 
 
 
@@ -1059,13 +1059,6 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 ```
 {  "message": "INVALID_APPLICATIONID","currentTimeStamp": 1454328359295 }
 ```
-
-
-Create Account Response Example:
-
-{"deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZXIYgICAgNXOoQgMCxIGRGV2aWNlGICAgICAgIAKDA",
-"lastSyncTime":"1437221081897","message":"UPDATED","suUserKeyString":
-"ahBzfm1vYmktY29tLWFscGhhchMLEgZTdVVzZXIYgICAgNXOoQgM"}          
 
 
 
