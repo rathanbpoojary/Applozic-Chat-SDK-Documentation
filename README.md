@@ -981,11 +981,13 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 
-***Create User Account***        
+
+***REGISTRATION API***        
 
 
 
-**Create User Account URL**: https://apps.applozic.com/rest/ws/register/client
+
+**Registration URL**: https://apps.applozic.com/rest/ws/register/client
 
 **Method Type**: POST
 
@@ -1045,7 +1047,13 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 ```
 
 
-***Note** :- If registration process failed then  json response with description :-
+
+***Note** :- **deviceKey** need to be stored and  sent as request header in each API call.
+
+
+
+
+If registration process failed then  json response with description :-
 
 
 
@@ -1064,21 +1072,35 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 
-
-****Authentication****      
+****Authentication Header From Device****      
 
 
 Authentication is done using BASIC authentication.
+Use **deviceKey** from above  registration response to create Authorization Code and send **deviceKey** also  in request header.
+ 
+**Authorization Code** : Basic Base64Encode of userId:deviceKey
 
-Get token to make api calls-      
+**Example**- 
+If the userId is abc and deviceKey is 09c5d869-6d38-4d6b-9ebf-9de16cdab176, then the authorization code will be:
+
+Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng==
+
+**All request should contain these 4 headers** -           
+
+
+| Authorization: Authorization Code  |
+| ------------- |
+| UserId-Enabled:true |
+| Application-Key:  Your Application Key  |  
+| Device-Key:  received in registration response  | 
 
 
 
 
-****Get Authenticaion Key****      
+****WEB-PLUGIN INITIALIZE URL****      
 
 
-**GET AUTHENTICATION KEY URL**: https://apps.applozic.com/tab/initialize.page
+**Web-Plugin initialize Url**: https://apps.applozic.com/tab/initialize.page
 **Method Type**: GET
 **Parameters**:        
 
@@ -1087,31 +1109,36 @@ Get token to make api calls-
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
 | applicationId  | Yes  |   | Your Application Key  |
-| userid  | Yes  |   | User id  |         
+| userId  | Yes  |   | User unique Id  |   
+| userName  | No  |   |Name you want to display to other user |   
 
 
-**Response**:
+
+
+**Response**:  In case of success Response Json to request with following properties :-         
+
  
-Sample json-       
 
 
-** test **               
 ``` 
-{"token":"AHRlWrqPBtxeFHrSi9n5QidJKllzpyMAOMVkLj",
-"emailId":"abc@xyz.com","userId":"abc","deviceKeyString":"ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX,
-"timeZoneOffset":"19800000"} 
+{"token":"8b907d06-d1d3-457e-8be4-382ef24f3e7d","userId":"Pink","clientId":"paho1852792237861","deviceKey":"bf845261-5a1b-4782-bbd2-f23fdf249df6","timeZoneOffset":"19800000","websocketUrl":"http://test.applozic.com","fileBaseUrl":"https://mobi-com-alpha.appspot.com","betaPackage":true} 
 ```
 
 
 
-Use **deviceKeyString** from above response to create Authorization Code
+
+****Authentication Header From Web****      
+
+
+Authentication is done using BASIC authentication.
+Use **deviceKey** from above response to create Authorization Code: 
  
-**Authorization Code** : Basic Base64Encode of userId:deviceKeyString
+**Authorization Code** : Basic Base64Encode of userId:deviceKey
 
 **Example**- 
-If the userId is abc and deviceKeyString is ahBzfm1vYmktY29tLWFscGhhciYLEgZTdVVzZX, then the authorization code will be:
+If the userId is Pink and deviceKey is bf845261-5a1b-4782-bbd2-f23fdf249df6, then the authorization code will be:
 
-Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWelpY
+Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZjY=
 
 **All request should contain these 3 headers** -           
 
@@ -1119,7 +1146,11 @@ Authorization Code: Basic YWJjOmFoQnpmbTF2WW1rdFkyOXRMV0ZzY0doaGNpWUxFZ1pUZFZWel
 | Authorization: Authorization Code  |
 | ------------- |
 | UserId-Enabled:true |
-| Application-Key:  "Your Application Key"  |           
+| Application-Key:  Your Application Key  |  
+
+
+
+**Note**:- Device-Key as a request header only sent from device.
 
 
 
