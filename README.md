@@ -1070,7 +1070,7 @@ If registration process failed then json response with description :-
 
 
 
-****Authentication Header From Device****    
+****Authentication Headers From Device****    
 
 
 
@@ -1140,7 +1140,7 @@ Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng
 
 
 
-****Authentication Header From Web****    
+****Authentication Headers From Web****    
 
 
 
@@ -1203,6 +1203,13 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
 
+** json **                         
+```
+{ "to":"XYZ", "message":"Hi XYZ " }
+```
+
+
+
 **Response**:-       
 
 
@@ -1211,8 +1218,15 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 | ------------- | ------------- |
 | message key  | Request is successfully processed  |
 | createdAt  | time in milliseconds |
-      
 
+
+
+
+** json **                         
+```
+{ "messageKey": "5-22bf4626-9019-4a4a-8565-6c0e40ecda96-1454398305364",
+  "createdAt": 1454398305000}
+```
 
 
 
@@ -1221,7 +1235,9 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
 
-**MESSAGE LIST URL**: https://apps.applozic.com/rest/ws/mobicomkit/v1/message/list
+
+**MESSAGE LIST URL**: https://apps.applozic.com/rest/ws/message/list
+
 **Method Type**: GET
 
 **Parameters**:        
@@ -1230,12 +1246,12 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| contactNumber  | No  |   | Contact Number for which you want to fetch the message  |
+| startIndex  | Yes  | 0  | Starting Index to fetch messages from list.  | 
+| pageSize  | Yes  | 50  | Number of messages per page you want to fetch.  |
 | startTime  | No  |   | Start Time from when you want to fetch message list. It is number of milliseconds since January 1, 1970, 00:00:00 GMT.  |
 | endTime  | No  |   | End Time upto when you want to fetch message list. It is number of milliseconds since January 1, 1970, 00:00:00 GMT.  | 
-| startIndex  | Yes  | 0  | Starting Index to fetch messages from list.  | 
-| pageSize  | Yes  | 200  | Number of messages per page you want to fetch.  | 
-| smsType  | No  |   | One of the following : INBOX, OUTBOX, DRAFT, OUTBOX_SENT_FROM_DEVICE, MT_INBOX, MT_OUTBOX.  |         
+ 
+ 
 
 
 
@@ -1248,28 +1264,15 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
  ```  
-{"message":[{"keyString":"agpzfmFwcGxvemljchALEgNTbXMYgICAgK_huQsM","deviceKeyString":        
-"agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_hmQoMCxIGRGV2aWNlGICAgICAgIAKDA",            
-"suUserKeyString":"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM","to":"123",                 
-"message":"Hi, how r u??","sent":false,"sendToDevice":true,"shared":false,"createdAtTime":1437565530994,             
-"type":5,"source":1,"contactIds":"9738150...","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true},
-{"keyString":"agpzfmFwcGxve mljchALEgNTbXMYgICAgPiJrAsM","deviceKeyString":               
-"agpzfmFwcGxvemljciYLEgZTdVVzZXIYgICAgK_               
-hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":             
-"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgK_hmQoM",             
-"to":"123","message":"i m fine! what about u?","sent":false,"sendToDevice":true,"shared":false,
-"createdAtTime":1437565473333,   
-"type":5,"source":1,"contactIds":"9738150..","storeOnDevice":true,"fileMetaKeyStrings":[],"read":true}]}      
-
+{"message":[{"key":"5-35c2957b-8de0-482b-bea9-7c5c2e1dd2f4-1452080064726","userKey":"35c2957b-8de0-482b-bea9-7c5c2e1dd2f4","to":"bingo","contactIds":"bingo","message":"how are you","sent":true,"delivered":false,"read":false,"createdAtTime":1452080064000,"type":5,"source":1,"status":3,"pairedMessageKey":"4-35c2957b-8de0-482b-bea9-7c5c2e1dd2f4-1452080064726","contentType":0}]}      
  ```           
  
  
  
 | Response  | Description | 
 | ------------- | ------------- | 
-| error  | In case of any exception contact devashish@applozic.com  |
-| null  | This will come if message list is empty  |
-| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |          
+| error  | In case of any exception or error contact devashish@applozic.com  |
+       
 
 
 
@@ -1277,7 +1280,9 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
 
 
-**DELETE MESSAGE  URL**: https://apps.applozic.com/rest/ws/mobicomkit/v1/message/delete
+
+**DELETE MESSAGE  URL**: https://apps.applozic.com/rest/ws/message/delete
+
 **Method Type**: GET 
 
 **Parameters**:         
@@ -1287,7 +1292,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 | Parameter  | Response | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
 | key  | Yes  |   | Message unique key  |
-| contactNumber  | Yes  |   | Contact Number for which you want to delete message  |       
+
 
 
 
@@ -1297,7 +1302,7 @@ hmQoMCxIGRGV2aWNlGICAgICAgIAKDA","suUserKeyString":
 
  | Parameter  | Description | 
 | ------------- | ------------- | 
-| success  | Request is successfully processedl  |
+| success  | Request is successfully processed  |
 | error  |This will come if any exception occurs on server or all the parameters are null. In case of any exception contact devashish@applozic.com  |
 | UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |        
 
