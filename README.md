@@ -982,7 +982,7 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 
-***REGISTRATION API***        
+****REGISTRATION API****        
 
 
 
@@ -1010,12 +1010,9 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 
-**Note**:deviceType value should be "1" for Android device and "4" for Ios device.
+**Note**:-  deviceType value should be **1** for Android device and **4** for Ios device.
 
 
-
-
-**Parameter Example**:    
 
 
 ** json **                         
@@ -1025,13 +1022,13 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 ```
 
 
-**Response**:  In case of success Response Json to request with following properties :-         
+**Response**:  success Response Json to the request with following properties :-         
 
 
 
 | Response  | Description |
 | ------------- | ------------- |
-| message | One of the following is returned:REGISTERED,REGISTERED.WITHOUTREGISTRATIONID, UPDATED |
+| message | One of the following is returned: REGISTERED,REGISTERED.WITHOUTREGISTRATIONID, UPDATED |
 | userKey | User key  |
 | deviceKey  | User device key |
 | lastSyncTime  | Time in miliseconds when user device last synced with server  |  
@@ -1048,12 +1045,12 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 
 
-***Note** :- **deviceKey** need to be stored and  sent as request header in each API call.
+***Note** :- **deviceKey** need to be stored and  sent in request header in each API call.
 
 
 
 
-If registration process failed then  json response with description :-
+If registration process failed then json response with description :-
 
 
 
@@ -1076,12 +1073,13 @@ If registration process failed then  json response with description :-
 
 
 Authentication is done using BASIC authentication.
+
 Use **deviceKey** from above  registration response to create Authorization Code and send **deviceKey** also  in request header.
  
 **Authorization Code** : Basic Base64Encode of userId:deviceKey
 
 **Example**- 
-If the userId is abc and deviceKey is 09c5d869-6d38-4d6b-9ebf-9de16cdab176, then the authorization code will be:
+If the userId is **abc** and deviceKey is **09c5d869-6d38-4d6b-9ebf-9de16cdab176**, then the authorization code will be:
 
 Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng==
 
@@ -1101,7 +1099,9 @@ Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng
 
 
 **Web-Plugin initialize Url**: https://apps.applozic.com/tab/initialize.page
+
 **Method Type**: GET
+
 **Parameters**:        
 
 
@@ -1115,13 +1115,14 @@ Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng
 
 
 
-**Response**:  In case of success Response Json to request with following properties :-         
+**Response**:  success Response Json to request with following properties :-         
 
  
 
 
+** json **
 ``` 
-{"token":"8b907d06-d1d3-457e-8be4-382ef24f3e7d","userId":"Pink","clientId":"paho1852792237861","deviceKey":"bf845261-5a1b-4782-bbd2-f23fdf249df6","timeZoneOffset":"19800000","websocketUrl":"http://test.applozic.com","fileBaseUrl":"https://mobi-com-alpha.appspot.com","betaPackage":true} 
+{"token":"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgOTcwAsM","email":"","userId":"Pink","clientId":"paho2555012084064505","countryCode":"IN","deviceKey":"bf845261-5a1b-4782-bbd2-f23fdf249df6","timeZoneOffset":"19800000","websocketUrl":"https://apps.applozic.com","fileBaseUrl":"https://applozic.appspot.com"} 
 ```
 
 
@@ -1131,12 +1132,13 @@ Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng
 
 
 Authentication is done using BASIC authentication.
+
 Use **deviceKey** from above response to create Authorization Code: 
  
 **Authorization Code** : Basic Base64Encode of userId:deviceKey
 
 **Example**- 
-If the userId is Pink and deviceKey is bf845261-5a1b-4782-bbd2-f23fdf249df6, then the authorization code will be:
+If the userId is **Pink** and deviceKey is **bf845261-5a1b-4782-bbd2-f23fdf249df6**, then the authorization code will be:
 
 Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZjY=
 
@@ -1150,7 +1152,7 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
 
-**Note**:- Device-Key as a request header only sent from device.
+**Note**:- Device-Key in request header only sent from device.
 
 
 
@@ -1159,22 +1161,21 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
 
-**SEND MESSAGE URL**: https://apps.applozic..om/rest/ws/mobicomkit/v1/message/send
+**SEND MESSAGE URL**: https://apps.applozic.com/rest/ws/message/send
+
 **Method Type**: POST
+
 **Content-Type**: application/json, application/xml
 
-**Parameters**: messagePxy (json object) will be passed as a parameter with following properties :-               
+**Parameters**:json will be passed as a parameter with following properties :-               
 
 
 
 
 | Parameter  | Required | Default  | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| to  | Yes  |   | User id to which you want to send message |
-| deviceKeyString  | Yes  |   | User unique device key |
+| to  | Yes  |   | UserId to which you want to send message |
 | message  | Yes  |   | Text Message |
-| type  | Yes  |   | Message type |
-| sendToDevice  |      |      |     |       
 
 
 **Response**:-       
@@ -1184,17 +1185,11 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 | Response  | Description |
 | ------------- | ------------- |
 | message key  | Request is successfully processed  |
-| error  | In case of any exception contact devashish@applozic.com  |
-| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |
-| DAILY_QUOTA_LIMIT_EXCEEDED  | This will come if the 600 API calls per day is crossed  |
-| NUMBERS_PER_SMS_LIMIT_CROSSED  | This will come if more than 50 numbers are added in a single API call  |        
+| createdAt  | time in milliseconds |
+      
 
 
 
-
-**Limitations**:
-
-In order to provide consistent service to all the users, there is a limitation of 600 API calls per day. Per API call, upto 50 comma separated phone numbers are allowed. In case you want to send sms to lets say 100 phone numbers then send 2 separate requests with 50 phone numbers in each request.      
 
 
 ****Message List****        
