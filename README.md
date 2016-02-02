@@ -787,12 +787,6 @@ Sample app with integration is available under [app](https://github.com/AppLozic
 
 ### Messages             
 
-
-
-****Applozic messaging jQuery plugin****          
-
-
-
 Classes ending with *ClientService.java interacts with the server.
 
 
