@@ -1069,7 +1069,10 @@ If registration process failed then json response with description :-
 
 
 
-****Authentication Header From Device****      
+
+****Authentication Header From Device****    
+
+
 
 
 Authentication is done using BASIC authentication.
@@ -1078,10 +1081,16 @@ Use **deviceKey** from above  registration response to create Authorization Code
  
 **Authorization Code** : Basic Base64Encode of userId:deviceKey
 
+
+
+
 **Example**- 
 If the userId is **abc** and deviceKey is **09c5d869-6d38-4d6b-9ebf-9de16cdab176**, then the authorization code will be:
 
 Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng==
+
+
+
 
 **All request should contain these 4 headers** -           
 
@@ -1095,14 +1104,17 @@ Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng
 
 
 
-****WEB-PLUGIN INITIALIZE URL****      
+****WEB-PLUGIN INITIALIZE URL****   
+
+
 
 
 **Web-Plugin initialize Url**: https://apps.applozic.com/tab/initialize.page
 
 **Method Type**: GET
 
-**Parameters**:        
+**Parameters**:       
+
 
 
 
@@ -1128,7 +1140,9 @@ Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng
 
 
 
-****Authentication Header From Web****      
+****Authentication Header From Web****    
+
+
 
 
 Authentication is done using BASIC authentication.
@@ -1137,10 +1151,17 @@ Use **deviceKey** from above response to create Authorization Code:
  
 **Authorization Code** : Basic Base64Encode of userId:deviceKey
 
+
+
+
 **Example**- 
+
 If the userId is **Pink** and deviceKey is **bf845261-5a1b-4782-bbd2-f23fdf249df6**, then the authorization code will be:
 
 Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZjY=
+
+
+
 
 **All request should contain these 3 headers** -           
 
@@ -1152,12 +1173,14 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
 
+
 **Note**:- Device-Key in request header only sent from device.
 
 
 
 
-****Send Message****          
+****Send Message****   
+
 
 
 
@@ -1176,6 +1199,8 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 | ------------- | ------------- | ------------- | ------------- |
 | to  | Yes  |   | UserId to which you want to send message |
 | message  | Yes  |   | Text Message |
+
+
 
 
 **Response**:-       
