@@ -1722,6 +1722,33 @@ ii ) Go to Build Phase. Expand  Embedded frameworks and add applozic framework.
 ![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/adding-applozic-framework.png)        
 
 
+**Quickly Launch your chat**
+
+
+You can test your chat quickly by adding below .h and .m file to your project.
+
+[**DemoChatManager.h**](https://raw.githubusercontent.com/AppLozic/Applozic-iOS-SDK/master/sampleapp/applozicdemo/DemoChatManager.h)        
+
+[**DemoChatManager.m**](https://raw.githubusercontent.com/AppLozic/Applozic-iOS-SDK/master/sampleapp/applozicdemo/DemoChatManager.m)  
+
+Change applicationID in DemoChatManager and you are ready to launch your chat from your controller :)
+
+Launch your chat
+
+```
+//Replace with your applicationId in DemoChatManager.h
+
+#define APPLICATION_ID @"applozic-sample-app" 
+
+
+//Launch your Chat from your controller.
+ DemoChatManager * demoChatManager = [[DemoChatManager alloc]init];
+    [demoChatManager launchChat:<yourcontrollerReference> ];
+
+```
+
+Detail about user creation and registraion:
+
 
 **USER REGISTRATION :**
 
@@ -1852,7 +1879,7 @@ Once your app receive notification, pass it to applozic handler for applozic not
   if (dictionary != nil)             
     {          
       NSLog(@"Launched from push notification: %@", dictionary);        
-      ALPushNotificationService *pushNotificationService = [ALPushNotificationService init];            
+      ALPushNotificationService *pushNotificationService = [[ALPushNotificationService alloc] init];            
       BOOL applozicProcessed = [pushNotificationService processPushNotification:dictionary updateUI:NO];               
   if (!applozicProcessed)                 
      {            
