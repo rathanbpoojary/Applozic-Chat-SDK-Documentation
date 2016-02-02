@@ -927,7 +927,10 @@ AppContactService.java provides methods you need to add, delete and update conta
 
 **updateContact(Contact contact)** : Update contact.
 
-**upsert(Contact contact)** : update or insert contact.       
+**upsert(Contact contact)** : update or insert contact.      
+
+
+
 
 
 
