@@ -1269,6 +1269,11 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
  
  
  
+ **In Case of Error**:-  
+ 
+ 
+ 
+ 
 | Response  | Description | 
 | ------------- | ------------- | 
 | error  | In case of any exception or error contact devashish@applozic.com  |
