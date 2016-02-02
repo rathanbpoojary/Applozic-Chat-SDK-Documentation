@@ -1121,7 +1121,7 @@ Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng
 
 
 
-**All request should contain these 4 headers** -           
+**All request  from Device should contain these 4 headers** -           
 
 
 | Authorization: Authorization Code  |
@@ -1192,7 +1192,7 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
 
-**All request should contain these 3 headers** -           
+**All request  from Web should contain these 3 headers** -           
 
 
 | Authorization: Authorization Code  |
