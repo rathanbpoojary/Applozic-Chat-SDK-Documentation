@@ -931,6 +931,32 @@ AppContactService.java provides methods you need to add, delete and update conta
 
 
 
+### Group 
+
+
+***1) Group create Method***  
+
+Create the Group with Group Name and Group Members. The below code illustrator creation of group 
+  ```
+  String groupName = "Applozic Group"; // Name of group.
+  List<String> groupMemberList = new ArrayList<String>(); // List Of unique group member Names.
+  groupMemberList.add("member1");
+  groupMemberList.add("member2");
+  groupMemberList.add("member3");
+  groupMemberList.add("member4");
+  ```
+  After adding group Memebers to List then pass the Group Name and Group Member List to constructor below
+  
+  Class to import : com.applozic.mobicomkit.api.people.ChannelCreate
+  ```
+  ChannelCreate channelCreate = new ChannelCreate(groupName,groupMemberList); // The Constructor accepts the two parameter String Group Name and List of Group Members.
+  ```
+  Class to import : com.applozic.mobicomkit.channel.service.ChannelService
+ ```
+ ChannelService.getInstance(context).createChannel(channelCreate); // Instantiating the  group create and it accetps the ChannelCreate object.
+ ```
+
+
 
 
 
