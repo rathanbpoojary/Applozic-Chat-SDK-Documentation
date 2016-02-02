@@ -1337,8 +1337,8 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
  | Parameter  | Description | 
 | ------------- | ------------- | 
 | success  | Request is successfully processed  |
-| error  |This will come if any exception occurs on server or all the parameters are null. In case of any exception contact devashish@applozic.com  |
-| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |        
+| error  |This will come if any exception occurs on server. In case of any exception contact devashish@applozic.com  |
+
 
 
 
@@ -1346,7 +1346,8 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
 
-**DELETE CONVERSATION THREAD URL**: https://apps.applozic.com/rest/ws/mobicomkit/v1/message/delete/conversation.task?contactNumber=userId
+**DELETE CONVERSATION THREAD URL** : https://apps.applozic.com/rest/ws/message/delete/conversation
+
 **Method Type**: GET 
 
 **Parameters**:          
@@ -1370,7 +1371,7 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 | ------------- | ------------- | 
 | success  | Request is successfully processedl  |
 | error  |This will come if any exception occurs on server or all the parameters are null. In case of any exception contact devashish@applozic.com  |
-| UnAuthorized Access  | This will come if the emailId and apiKey doesn't match or your API Pack got expired.  |         
+      
 
 
 
