@@ -373,7 +373,7 @@ To integrate messaging into your android app, register at [Applozic](https://www
 
 
 
-`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.2' `      
+`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.21' `      
 
 
 Add the following in gradle android target:      
@@ -412,6 +412,12 @@ Applozic Application URL:
            android:value="https://apps.applozic.com" /> 
    ```
     
+ Applozic MQTT URL:
+ 
+ ```
+ <meta-data android:name="com.applozic.mqtt.server.url"
+            android:value="tcp://apps.applozic.com" />
+   ```
     
  Applozic Notification package name and launcher icon:        
  
