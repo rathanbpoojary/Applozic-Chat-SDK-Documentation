@@ -201,7 +201,7 @@ Add Applozic messaging plugin into your web application :
 Step 1: Register at **https://www.applozic.com/** to get the application key.
 
 
-Step 2: For customization - where you can modify the UI, checkout **https://github.com/AppLozic/Applozic-Web-Plugin/tree/master/message/advanced**
+Step 2: For customization an- where you can modify the UI, checkout **https://github.com/AppLozic/Applozic-Web-Plugin/tree/master/message/advanced**
 
 Open **message.html**  file as a reference and add all scripts and html in your web page in same order as given in message.html. 
 
@@ -952,7 +952,7 @@ Create the Group with Group Name and Group Members. The below code illustrator c
 
 
 
-###  Migrating from 3.016
+###  Migrating from 3.019
 
 
 
@@ -963,29 +963,31 @@ Create the Group with Group Name and Group Members. The below code illustrator c
 **Replace the following in build.gradle :**
 
 
-`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.019' `
+`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.2' `
 
 
-
-**Addition of permission in androidmanifest.xml**
-
-
+**Replace the old Theme style  of MobiComKitPeopleActivity.java in androidmanifest.xml with @style/Applozic.People.Theme Like below**
 
 ```
-<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<activity android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity"
+          android:configChanges="keyboardHidden|orientation|screenSize"
+          android:label="@string/activity_contacts_list"
+          android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
+          android:theme="@style/Applozic.People.Theme"
+          android:windowSoftInputMode="adjustResize">
+     <!-- Parent activity meta-data to support API level 7+ -->
+<meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />
+         <intent-filter>
+                 <action android:name="android.intent.action.SEARCH" />
+         </intent-filter>
+<meta-data
+          android:name="android.app.searchable"
+          android:resource="@xml/searchable_contacts" />
+</activity>
 ```
 
-**Replace the old ConnectivityReceiver in androidmanifest.xml with**
-```
-<receiver android:name="com.applozic.mobicomkit.broadcast.ConnectivityReceiver" 
-           android:exported="true" android:enabled="true">   
-          <intent-filter>
-                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-          </intent-filter>
-</receiver>
-
-  ```
 
 
 
