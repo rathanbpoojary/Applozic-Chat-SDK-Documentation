@@ -956,6 +956,43 @@ Create the Group with Group Name and Group Members. The below code illustrator c
 
 
 
+### UI Customization
+
+
+***1.Changing the Chat Bubble Color***
+
+Sent Message bubble color
+ ```
+ApplozicSetting.getInstance(context).setSentMessageBackgroundColor(int color); // it accepts the R.color.name
+ ```
+Received Message bubble color
+
+ ```
+ApplozicSetting.getInstance(context).setReceivedMessageBackgroundColor(int color); // it accepts the R.color.name
+ ```
+
+***2.Changing the Send Bubble Color***
+
+ ```
+ApplozicSetting.getInstance(context).setSendButtonBackgroundColor(int color); // it accepts the R.color.name
+
+ ```
+
+***3.To show the Online in Quick Chat Screen***
+
+ ```
+ApplozicSetting.getInstance(context).showOnlineStatusInMasterList();
+
+ ```
+
+
+
+
+
+
+
+
+
 
 
 ###  Migrating from 3.019
