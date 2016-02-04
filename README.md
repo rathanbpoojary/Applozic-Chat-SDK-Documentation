@@ -1006,8 +1006,14 @@ ApplozicSetting.getInstance(context).showOnlineStatusInMasterList();
 **Replace the following in build.gradle :**
 
 
-`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.2' `
+`compile 'com.applozic.communication.uiwidget:mobicomkitui:3.21' `
 
+**Add meta data in  androidmanifest.xml** 
+
+```
+ <meta-data android:name="com.applozic.mqtt.server.url"
+            android:value="tcp://apps.applozic.com" />
+```
 
 **Replace the old Theme style  of MobiComKitPeopleActivity.java in androidmanifest.xml with @style/Applozic.People.Theme Like below**
 
