@@ -1738,7 +1738,7 @@ b ) Once you signed up create your Application with required details on admin da
 
 
 
-![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/dashboard-blank-content.png)         
+![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/Resized-dashboard-blank-page.png)         
 
 
 
@@ -1747,7 +1747,7 @@ c) Once you create your application you can see your application-Id listed on ad
 
 
 
-![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/dashboard-content.png)         
+![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/Resized-dashboard-content-page.png)         
 
 
 
@@ -1767,7 +1767,7 @@ ii ) Go to Build Phase. Expand  Embedded frameworks and add applozic framework.
 
 
 
-![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/adding-applozic-framework.png)        
+![dashboard-blank-content](https://raw.githubusercontent.com/AppLozic/Applozic-Chat-SDK-Documentation/master/Resized-adding-applozic-framework.png)        
 
 
 **Quickly Launch your chat**
