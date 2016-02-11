@@ -935,24 +935,58 @@ AppContactService.java provides methods you need to add, delete and update conta
 ***1) Group create Method***  
 
 Create the Group with Group Name and Group Members. The below code illustrator creation of group 
-  ```
-  String groupName = "Applozic Group"; // Name of group.
-  List<String> groupMemberList = new ArrayList<String>(); // List Of unique group member Names.
-  groupMemberList.add("member1");
-  groupMemberList.add("member2");
-  groupMemberList.add("member3");
-  groupMemberList.add("member4");
-  ```
-  After adding group Memebers to List then pass the Group Name and Group Member List to constructor below
+
+  Class to import : com.applozic.mobicomkit.api.people.ChannelCreate            
   
-  Class to import : com.applozic.mobicomkit.api.people.ChannelCreate
-  ```
-  ChannelCreate channelCreate = new ChannelCreate(groupName,groupMemberList); // The Constructor accepts the two parameter String Group Name and List of Group Members.
-  ```
   Class to import : com.applozic.mobicomkit.channel.service.ChannelService
+  
+  ```
+new Thread(new Runnable() {
+     @Override
+           public void run() {
+                String groupName = "Applozic Group"; // Name of group.
+                List<String> groupMemberList = new ArrayList<String>(); // List Of unique group member Names.
+                groupMemberList.add("member1");
+                groupMemberList.add("member2");
+                groupMemberList.add("member3");
+                groupMemberList.add("member4");
+
+  // After adding group Members to List then pass the Group Name and Group Member List to constructor below
+
+  ChannelCreate channelCreate = new ChannelCreate(groupName, groupMemberList); // The Constructor accepts the two parameter String Group Name and List of Group Members.
+
+  Channel channel = ChannelService.getInstance(context).createChannel(channelCreate); // Instantiating the  group create and it accept the ChannelCreate object.
+               }
+           }).start();
  ```
- ChannelService.getInstance(context).createChannel(channelCreate); // Instantiating the  group create and it accetps the ChannelCreate object.
+ 
+
+***2) Add Member to group*** 
+
+ ``` 
+ Intent addUserIntent = new Intent(context, ApplozicChannelIntentService.class);
+ addUserIntent.putExtra(ApplozicChannelIntentService.CHANNEL_KEY, "channelKey"); //Replace channelKey with your channelKey i.e groupId
+ addUserIntent.putExtra(ApplozicChannelIntentService.ADD_USER_TO_CHANNEL, "userId");// Replace the userId with which u want add the user into the group
+ startService(addUserIntent);
  ```
+ 
+ ***3) Remove Member From the group***
+  ```
+ Intent removeUserIntent = new Intent(context, ApplozicChannelIntentService.class);
+ removeUserIntent.putExtra(ApplozicChannelIntentService.CHANNEL_KEY, "channelKey");//Replace channelKey with your channelKey i.e groupId
+ removeUserIntent.putExtra(ApplozicChannelIntentService.REMOVE_USER_ID_FROM_CHANNEL, "userId");// Replace the userId that which u want to Remove  user from the group
+ startService(removeUserIntent);
+ ```
+ 
+ ***4)To Change the Group Name***
+ ```
+  Intent changeGroupNameIntent = new Intent(context, ApplozicChannelIntentService.class);
+  changeGroupNameIntent.putExtra(ApplozicChannelIntentService.CHANNEL_KEY, "channelKey");//Replace channelKey with your channelKey i.e groupId
+  changeGroupNameIntent.putExtra(ApplozicChannelIntentService.CHANGE_CHANNEL_NAME, "newName"); //Replace the newName with group name
+  startService(changeGroupNameIntent);
+ ```
+
+
 
 
 
