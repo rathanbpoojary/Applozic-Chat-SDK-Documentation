@@ -88,11 +88,11 @@ Step 4: Some additional options which you can configure while plugin initializat
  2) contactDisplayImage: 'PASS_YOUR_FUNCTION_NAME_HERE'  //Type - FUNCTION (optional)
   Function should return USER_IMAGE_URL by taking USERID as a input parameter. Example given in Step 6 
  3) onInit : 'PASS_YOUR_FUNCTION_NAME_HERE'  // TYPE - FUNCTION
-  Callback function which execute after plugin initialize. You can write your logic inside this function which you want to execute after plugin initialized. Example given in Step 7
+  Callback function which execute after plugin initialize. You can write your logic inside this function which you want to execute after plugin initialization. Example given in Step 7
 ```
 
 
-Sample CONTACTS_JSON  is given below as a reference used in Step 5 and Step 6      
+Sample of CONTACTS_JSON given below which is used as a reference in Step 5 and Step 6      
 
 
 ```
@@ -143,7 +143,7 @@ Example:
  
 Step 7: Sample code to define **onInit** function  (optional) : 
 
-You can write javascript function to return USER_IMAGE_URL on basis of USERID 
+You can write javascript function to execute your logic after plugin initialization
 
 
 Example:     
