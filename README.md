@@ -70,7 +70,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
 
 
 ```
- userId: 'Logged In User Unique Id',                 // required   
+ userId: 'Logged in UserId',                 // required   
  appId: 'Your Application Key'                       // required     
  desktopNotification: true or false,                 // optional
  notificationIconLink : 'Your Website Logo Url'      // optional 
