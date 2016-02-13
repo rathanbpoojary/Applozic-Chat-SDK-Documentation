@@ -161,7 +161,7 @@ Example:
  
  Step 8: If you want to load all contacts directly use below function : (optional)
 
- Use below function to load contact list by passing contacts json as given in variable **CONTACT_LIST_JSON**    
+ Function to load contact list by passing contacts json as given in variable **CONTACT_LIST_JSON**    
 
 
 
