@@ -58,8 +58,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
  
 ``` 
 <script type="text/javascript" >
-  window.applozic.init({userId: 'PUT_USERID_HERE', appId: 'PUT_APPLICAION_KEY_HERE', desktopNotification: true,
-  notificationIconLink :'PUT_LOGO_URL_HERE' });
+  window.applozic.init({userId: 'PUT_USERID_HERE', appId: 'PUT_APPLICAION_KEY_HERE', desktopNotification: true});
 </script>
 ```    
 
