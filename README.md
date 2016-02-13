@@ -141,7 +141,7 @@ Example:
   }                            
  ```
  
-Step 7: Sample code to define **onInit** function  (optional) : 
+Step 7: Sample code to define **onInit()** function  (optional) : 
 
 You can write javascript function to execute your logic after plugin initialization
 
