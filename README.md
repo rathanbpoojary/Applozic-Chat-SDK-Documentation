@@ -92,7 +92,7 @@ Step 4: Some additional options which you can configure while plugin initializat
 ```
 
 
-Sample of CONTACTS_JSON given below which is used as a reference in Step 5 and Step 6      
+Sample of **CONTACTS_JSON** given below which is used as a reference in Step 5 and Step 6      
 
 
 ```
@@ -182,8 +182,8 @@ var CONTACT_LIST_JSON = {"contacts": [{"userId": "user1", "displayName": "Devash
           
 ```
 
-**NOTE :Use **loadContacts** function only after plugin initailzed.
-You don't need to use functions explained in Step 6 and Step 7 if loading all contacts dynamically as explaind in Step 8  
+**NOTE :Use **loadContacts** function only after plugin initailization.
+You don't need to use functions explained in Step 5 and Step 6 if loading all contacts dynamically as explaind in Step 8  
 
 
 
