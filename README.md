@@ -159,15 +159,10 @@ Example:
   ```
  
  
- Step 8: If you want to load all contacts directly use below function : (optional)
-
- Function to load contact list by passing contacts json as given in variable **CONTACT_LIST_JSON**    
-
-
+ Step 8: If you want to load all contacts directly use below function (optional) :
 
 ```
 // APPLOZIC_FUNCTION_TO_LOAD_CONTACTS
-
  $applozic.fn.applozic('loadContacts', 'PUT_CONTACT_LIST_JSON_HERE'); // contacts json format given below
  
  
@@ -179,7 +174,6 @@ var CONTACT_LIST_JSON = {"contacts": [{"userId": "user1", "displayName": "Devash
 {"userId": "user3", "displayName": "Shanki",
 "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};       
 
-          
 ```
 
 **NOTE :Use **loadContacts** function only after plugin initailization.
@@ -187,12 +181,10 @@ You don't need to use functions explained in Step 5 and Step 6 if loading all co
 
 
 
-Step 9: Function to load individual tab conversation dynamically (optional)
-
-You can call below function to directly open any contact tab dynamically :    
+Step 9: Function to load individual tab conversation dynamically (optional) :
 
 ```
- $applozic.fn.applozic('loadTab', 'PUT_OTHER_USERID_HERE');  // Pass other USERID here instead of logged in USERID 
+ $applozic.fn.applozic('loadTab', 'PUT_OTHER_USERID_HERE');  // user Id of other person with whom you want to open conversation 
 
  ``` 
  
@@ -200,7 +192,7 @@ You can call below function to directly open any contact tab dynamically :
  
 Step 10: Anchor tag or button to load individual tab conversation directly (optional) :
 
-You can add the following html into your code to directly open a conversation with any user by passing two data attributes-   
+You can add the following html into your code to directly open a conversation with any user-   
 
 ```
 <a href="#" class="applozic-launcher" data-mck-id="PUT_OTHER_USERID_HERE" data-mck-name="PUT_OTHER_USER_DISPLAY_NAME_HERE">CHAT BUTTON</a>
