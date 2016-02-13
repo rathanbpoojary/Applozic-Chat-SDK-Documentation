@@ -70,16 +70,16 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
 
 
 ```
- userId: 'Logged in UserId',                 // required   
+ userId: 'Logged in UserId',                         // required   
  appId: 'Your Application Key'                       // required     
  desktopNotification: true or false,                 // optional
  notificationIconLink : 'Your Website Logo Url'      // optional 
- Note : Only for chrome browser enable or disable desktop notifications for incoming messages. Notification Icon required for desktop notification.
+ Note : Only for chrome browser enable or disable desktop notifications for incoming messages. Website Logo required for desktop notification.
 ```
 
 
 
-Step 4: Some additional options which you can configure while plugin initialization :
+Step 4: Some additional options which you can configure while plugin initialization in Step 3 :
 
 
 ```
@@ -106,7 +106,7 @@ var CONTACTS_JSON = {"USERID_1": {"displayName": "Devashish",
 
 
 
-Step 5: Sample code to define **contactDisplayName** function use to get USER_DISPLAY_NAME (optional) : 
+Step 5: Sample code define **contactDisplayName** function(optional) : 
 
 You  can write javascript function which return USER_DISPLAY_NAME on basis of USERID 
 
@@ -123,7 +123,7 @@ Example:
 ```
 
 
-Step 6: Sample code to define **contactDisplayImage** function use to get USER_IMAGE_URL (optional) : 
+Step 6: Sample code to define **contactDisplayImage** function (optional) : 
 
 You can write javascript function to return USER_IMAGE_URL on basis of USERID 
 
