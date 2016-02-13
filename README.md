@@ -106,7 +106,7 @@ var CONTACTS_JSON = {"USERID_1": {"displayName": "Devashish",
 
 
 
-Step 5: Sample code define **contactDisplayName** function(optional) : 
+Step 5: Sample code define **contactDisplayName()** function (optional) : 
 
 You  can write javascript function which return USER_DISPLAY_NAME on basis of USERID 
 
@@ -123,7 +123,7 @@ Example:
 ```
 
 
-Step 6: Sample code to define **contactDisplayImage** function (optional) : 
+Step 6: Sample code to define **contactDisplayImage()** function (optional) : 
 
 You can write javascript function to return USER_IMAGE_URL on basis of USERID 
 
@@ -167,16 +167,19 @@ Example:
  
  
 // SAMPLE CONTACT_LIST_JSON 
-var CONTACT_LIST_JSON = {"contacts": [{"userId": "user1", "displayName": "Devashish", 
-"photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
-{"userId": "user2", "displayName": "Adarsh", 
-"photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
-{"userId": "user3", "displayName": "Shanki",
-"photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};       
+var CONTACT_LIST_JSON = 
+          {"contacts": [{"userId": "user1", "displayName": "Devashish", 
+                          "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
+                        {"userId": "user2", "displayName": "Adarsh", 
+                          "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
+                        {"userId": "user3", "displayName": "Shanki",
+                          "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}
+                      ]
+         };       
 
 ```
 
-**NOTE :Use **loadContacts** function only after plugin initailization.
+**NOTE**- Call **loadContacts** function only after plugin initailization.
 You don't need to use functions explained in Step 5 and Step 6 if loading all contacts dynamically as explaind in Step 8  
 
 
@@ -197,6 +200,7 @@ You can add the following html into your code to directly open a conversation wi
 ```
 <a href="#" class="applozic-launcher" data-mck-id="PUT_OTHER_USERID_HERE" data-mck-name="PUT_OTHER_USER_DISPLAY_NAME_HERE">CHAT BUTTON</a>
 
+**Note** - Data attribute **mck-name** is optional in above tag
  ``` 
  
  
