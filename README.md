@@ -58,127 +58,170 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
  
 ``` 
 <script type="text/javascript" >
-  window.applozic.init({userId: 'user id', appId: 'application key',
-  contactDisplayName: displayName, contactDisplayImage: contactImageSrc, desktopNotification: true});
+  window.applozic.init({userId: 'PUT_USERID_HERE', appId: 'PUT_APPLICAION_KEY_HERE', desktopNotification: true,
+  notificationIconLink :'PUT_LOGO_URL_HERE' });
 </script>
 ```    
 
 
 
-Step 4: Replace the following parameters in script:    
+ Above options description :    
 
 
 
 ```
- userId: 'User Unique id',                 // required   
- appId: 'Your application key'              // required     
- contactDisplayName: 'Callback function to return contact name by userId',      
- // function should receive one parameter i.e userId. Example given in Step 6 (optional)        
- contactDisplayImage: 'Callback function to return image src of contact by  userId',     
- // function should receive one parameter i.e userId'. Example given in Step 7 (optional)     
- desktopNotification: true or false,       
- // only for chrome browser enable or disable desktop notifications for incoming messages (optional)          
-```
-
-
-Note : Example of callback functions and json format is given in below in step 6,7
-
-Step 5: To add auto suggest users list in search field (optional)
-
-You can bind auto suggest plugin on input search field with id given below:     
-
-
-
-```
-mck-search 
+ userId: 'Logged In User Unique Id',                 // required   
+ appId: 'Your Application Key'                       // required     
+ desktopNotification: true or false,                 // optional
+ notificationIconLink : 'Your Website Logo Url'      // optional 
+ Note : Only for chrome browser enable or disable desktop notifications for incoming messages. Notification Icon required for desktop notification.
 ```
 
 
 
-Contacts Json format is given below as a reference used in **displayName()** and **contactImageSrc()** :     
+Step 4: Some additional options which you can configure while plugin initialization :
 
 
 ```
-var contacts = {"user1": {"userId": "user1", "displayName": "Devashish",
+ 1) contactDisplayName: 'PASS_YOUR_FUNCTION_NAME_HERE'  // Type - FUNCTION  (optional)
+  Function should return USER_DISPLAY_NAME by taking USERID as input parameter. Example given in Step 5        
+ 2) contactDisplayImage: 'PASS_YOUR_FUNCTION_NAME_HERE'  //Type - FUNCTION (optional)
+  Function should return USER_IMAGE_URL by taking USERID as a input parameter. Example given in Step 6 
+ 3) onInit : 'PASS_YOUR_FUNCTION_NAME_HERE'  // TYPE - FUNCTION
+  Callback function which execute after plugin initialize. You can write your code inside this function which you want to execute       on plugin initialize. Example given in Step 7
+```
+
+
+Sample CONTACTS_JSON  is given below as a reference used in Step 5 and Step 6      
+
+
+```
+var CONTACTS_JSON = {"USERID_1": {"displayName": "Devashish",
 "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"},
-"user2": {"userId": "user2", "displayName": "Adarsh", "photoLink":    
+"USERID_2": { "displayName": "Adarsh", "photoLink":    
 "https://www.applozic.com/resources/images/applozic_icon.png"}, 
-"user3": {"userId": "user3", "displayName": "Shanki", "photoLink":  
+"USERID_3": { "displayName": "Shanki", "photoLink":  
 "https://www.applozic.com/resources/images/applozic_icon.png"}}; 
  ```
 
 
 
-Step 6: Callback function to get contact display name from userId (optional)
+Step 5: Sample code to define **contactDisplayName** function use to get USER_DISPLAY_NAME (optional) : 
 
-You  can write javascript function which return display name on basis of userId 
+You  can write javascript function which return USER_DISPLAY_NAME on basis of USERID 
 
 Example:     
-
-
 
 ```   
- function displayName(userId)  {                      
-   var contact = contacts[userId];               
-   // used contacts variable as given above.                
-   if (typeof contact !== 'undefined')             
-   {                                      
-   return contact.displayName;                  
-   } }                     
+ function contactDisplayName(USERID)  {                      
+   var contact = CONTACTS_JSON[USERID];               
+        if (typeof contact !== 'undefined')             
+          {                                      
+           return contact.displayName;                  
+         } 
+ }                     
 ```
 
 
-Step 7: Callback function to get contact image url  from userId (optional)
+Step 6: Sample code to define **contactDisplayImage** function use to get USER_IMAGE_URL (optional) : 
 
-You  can write javascript function to return user image url on basis of userId 
+You can write javascript function to return USER_IMAGE_URL on basis of USERID 
+
 
 Example:     
 
 
-
 ```
-  function contactImageSrc(userId)  {                        
-  var contact = contacts[userId];   // used contacts variable as given above.                       
-  if (typeof contact !== 'undefined')                      
-  {                       
-  return contact.photoLink;          
-  }  }                            
+  function contactDisplayImage(USERID)  {                        
+    var contact =  CONTACTS_JSON[USERID];                       
+    if (typeof contact !== 'undefined')                      
+      {                       
+        return contact.photoLink;          
+      }
+  }                            
  ```
  
- 
- 
- Step 8: Function to load contact list dynamically (optional)
+Step 7: Sample code to define **onInit** function  (optional) : 
 
-You can call below function to load contact list by passing contacts json as given in variable contacts     
+You can write javascript function to return USER_IMAGE_URL on basis of USERID 
+
+
+Example:     
+
+
+  ```
+  function onInit(response) {
+    if (response === "success") {
+      // write your logic here
+    }
+  };
+  
+  ```
+ 
+ 
+ Step 8: If you want to load all contacts directly use below function : (optional)
+
+ Use below function to load contact list by passing contacts json as given in variable **CONTACT_LIST_JSON**    
 
 
 
 ```
-var contacts = {"contacts": [{"userId": "user1", "displayName": "Devashish", 
+// APPLOZIC_FUNCTION_TO_LOAD_CONTACTS
+
+ $applozic.fn.applozic('loadContacts', 'PUT_CONTACT_LIST_JSON_HERE'); // contacts json format given below
+ 
+ 
+// SAMPLE CONTACT_LIST_JSON 
+var CONTACT_LIST_JSON = {"contacts": [{"userId": "user1", "displayName": "Devashish", 
 "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
 {"userId": "user2", "displayName": "Adarsh", 
 "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, 
 {"userId": "user3", "displayName": "Shanki",
 "photoLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};       
 
- $applozic.fn.applozic('loadContacts', 'put-contacts-json-here'); // contacts json format given above          
+          
 ```
 
+**NOTE :Use **loadContacts** function only after plugin initailzed.
+You don't need to use functions explained in Step 6 and Step 7 if loading all contacts dynamically as explaind in Step 8  
 
-Step 9: Function to load tab  dynamically (optional)
+
+
+Step 9: Function to load individual tab conversation dynamically (optional)
 
 You can call below function to directly open any contact tab dynamically :    
 
+```
+ $applozic.fn.applozic('loadTab', 'PUT_OTHER_USERID_HERE');  // Pass other USERID here instead of logged in USERID 
+
+ ``` 
+ 
+ 
+ 
+Step 10: Anchor tag or button to load individual tab conversation directly (optional) :
+
+You can add the following html into your code to directly open a conversation with any user by passing two data attributes-   
 
 ```
- $applozic.fn.applozic('loadTab', 'put-userId-here'); 
- ```        
+<a href="#" class="applozic-launcher" data-mck-id="PUT_OTHER_USERID_HERE" data-mck-name="PUT_OTHER_USER_DISPLAY_NAME_HERE">CHAT BUTTON</a>
+
+ ``` 
  
  
+ 
+Step 11: To add auto suggest users list in search field use below element id (optional) : 
 
+You can bind auto suggest plugin on input search field with id given below     
 
+```
+mck-search 
+```
 
   
+
+
+
+
 
 
 
