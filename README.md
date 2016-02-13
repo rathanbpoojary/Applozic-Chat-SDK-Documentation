@@ -70,9 +70,9 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
 
 
 ```
- userId: 'Logged in UserId',                         // required   
- appId: 'Your Application Key'                       // required     
- desktopNotification: true or false,                 // optional
+ userId: 'USERID from whom you want to initialize plugin'                   // required   
+ appId: 'Your Application Key'                       // Obtained in Step 1 (required)     
+ desktopNotification: true or false                  // optional
  notificationIconLink : 'Your Website Logo Url'      // optional 
  Note : Only for chrome browser enable or disable desktop notifications for incoming messages. Website Logo required for desktop notification.
 ```
