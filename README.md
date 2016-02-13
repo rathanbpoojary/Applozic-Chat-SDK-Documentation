@@ -71,7 +71,7 @@ Step 2: For the standard user interface, add the following Applozic messaging pl
 
 ```
  userId: 'USERID from whom you want to initialize plugin'                   // required   
- appId: 'Your Application Key'                       // Obtained in Step 1 (required)     
+ appId: 'Your Application Key'                       // obtained from Step 1 (required)     
  desktopNotification: true or false                  // optional
  notificationIconLink : 'Your Website Logo Url'      // optional 
  Note : Only for chrome browser enable or disable desktop notifications for incoming messages. Website Logo required for desktop notification.
@@ -88,7 +88,7 @@ Step 4: Some additional options which you can configure while plugin initializat
  2) contactDisplayImage: 'PASS_YOUR_FUNCTION_NAME_HERE'  //Type - FUNCTION (optional)
   Function should return USER_IMAGE_URL by taking USERID as a input parameter. Example given in Step 6 
  3) onInit : 'PASS_YOUR_FUNCTION_NAME_HERE'  // TYPE - FUNCTION
-  Callback function which execute after plugin initialize. You can write your code inside this function which you want to execute       on plugin initialize. Example given in Step 7
+  Callback function which execute after plugin initialize. You can write your logic inside this function which you want to execute after plugin initialized. Example given in Step 7
 ```
 
 
