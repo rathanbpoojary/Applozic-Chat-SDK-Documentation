@@ -1976,13 +1976,6 @@ Once your app receive notification, pass it to applozic handler for applozic not
 ```
 
 
-**Image assets upload** 
-
-Add following image assets to your projects: 
-
-[https://github.com/AppLozic/Applozic-iOS-SDK/tree/master/sample-with-framework/applozicdemo/Assets.xcassets/applogic_image](https://github.com/AppLozic/Applozic-iOS-SDK/tree/master/sample-with-framework/applozicdemo/Assets.xcassets/applogic_image)
-
-
 **Launching applozic message screen** 
 
 Below code will explain how to launch applozic message view. you can put this according to your need (like on click of any button, add any button at the navigation bar or tab ).            
