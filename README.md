@@ -219,14 +219,17 @@ Step 12: To show **online/offline** status(optional) :
 You can add the following  properties to your html element for real time online/offline status update
 
 **Two Class Attribute** - 
-mck-user-ol-status **AND**  n-vis
+mck-user-ol-status **AND** n-vis
+
+
+
 **Data Attribute** - 
 data-mck-id='PUT_OTHER_USERID_HERE'
 
 
-  Example: 
+Example: 
 ```
-   <div class="mck-user-ol-status n-vis" data-mck-id='PUT_OTHER_USERID_HERE'></div>
+<div class="mck-user-ol-status n-vis" data-mck-id='PUT_OTHER_USERID_HERE'></div>
 ```
 
 
