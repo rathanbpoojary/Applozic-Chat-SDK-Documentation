@@ -214,6 +214,16 @@ mck-search
   
 
 
+Step 12: To show online/offline status dynamically (optional) : 
+
+You can add the following class in your html element for real time online offline status update
+**mck-user-ol-status** AND  **n-vis**
+
+  Example: 
+```
+   <div class="mck-user-ol-status n-vis" data-mck-id='SELLER3'>
+```
+
 
 
 
