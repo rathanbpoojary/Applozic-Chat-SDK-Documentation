@@ -389,7 +389,14 @@ You can call below function to directly open any contact tab dynamically :
 
 ```
  $applozic.fn.applozic('loadTab', 'put-userId-here'); 
-```
+```          
+
+
+###Lightweight - Plugin       
+
+
+
+
 
 
 
