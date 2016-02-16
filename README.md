@@ -19,8 +19,6 @@ Want to contribute? Drop us a mail at   ` contact@applozic.com `
 
 ****Applozic messaging jQuery plugin****
 
-Integrate messaging plugin into your web application.
-
 A jQuery plugin to integrate messaging into your web page for real time communication between users via Applozic messaging platform and also to see your latest conversations and past chat history.
 
 
