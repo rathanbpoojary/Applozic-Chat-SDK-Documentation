@@ -255,7 +255,7 @@ Add Applozic messaging plugin into your web application :
 Step 1: Register at **https://www.applozic.com/** to get the application key.
 
 
-Step 2: For customization an- where you can modify the UI, checkout **https://github.com/AppLozic/Applozic-Web-Plugin/tree/master/message/advanced**
+Step 2: For customization the UI, checkout **https://github.com/AppLozic/Applozic-Web-Plugin/tree/master/message/advanced**
 
 Open **message.html**  file as a reference and add all scripts and html in your web page in same order as given in message.html. 
 
