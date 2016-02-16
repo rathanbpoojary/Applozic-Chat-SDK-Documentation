@@ -393,15 +393,11 @@ You can call below function to directly open any contact tab dynamically :
 ```          
 
 
-### Lightweight - Plugin              
+### Lightweight - Plugin                       
 
 
 
-
-
-**Welcome to the Applozic-Web-Plugin**
-
-# Applozic light weight messaging jQuery plugin.
+****Applozic light weight messaging jQuery plugin.****
 
 Integrate messaging plugin into your web application.
 
