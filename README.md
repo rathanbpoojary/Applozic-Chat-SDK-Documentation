@@ -1438,10 +1438,10 @@ Authentication is done using BASIC authentication. It is combination of email & 
 If the email of the admin(Logged in Applozic Dashboard) is  **jack** and password is **adminLoggedInApplozicDashboard**, 
 then the Apz-Token will be:
 
-**Apz-Token**: Basic amFjazphZG1pbkxvZ2dlZEluQXBwbG96aWNEYXNoYm9hcmQ=
+Apz-Token: Basic amFjazphZG1pbkxvZ2dlZEluQXBwbG96aWNEYXNoYm9hcmQ=
+Apz-AppId: application key of application for which admin want to send message. 
 
 
-**Apz-AppId**: application key of application for which admin want to send message. 
 
 
 
@@ -1449,6 +1449,7 @@ then the Apz-Token will be:
 
 
 ****User To User Messaging****
+
 
 
 
