@@ -1344,12 +1344,121 @@ Integrate native app message communication to your product without developing an
 Are you looking for platform-native Sdks to integrate into your app. All you need to do is include the Applozic SDK as a library in your project and a couple of lines of code. We will take care of rest things from server hosting, database, maintenance to analytics.     
 
 
-### Rest API         
+### Rest API       
 
 
 
 
-****REGISTRATION API****        
+
+
+****Application To User Messaging****
+
+Application To User Messaging provides an API by using which admin user can send message to any user of the application.
+
+
+
+
+
+****DISPATCH MESSAGE API****        
+
+
+
+
+**DISPATCH URL**: https://staging.applozic.com/rest/ws/message/dispatch
+
+**Method Type**: POST
+
+**Content-Type**: application/json
+
+**Parameters**: Parameters required for API call :- 
+
+
+
+
+| Parameter  | Required | Default | Description |
+| ------------- | ------------- | ------------- | ------------- |       
+| senderUser | Yes  |   | unique Id of  message sender user  |
+| receiverUser | Yes  |   | unique Id of message receiver user  |
+| content  | Yes |   | message content to be passed  |
+
+
+
+
+
+**Response**:  success Response Json to the request with following properties :-         
+
+
+
+| Response  | Description |
+| ------------- | ------------- |
+| messageKey |message key  |
+| createdAt | Time in miliseconds when response is return from server |
+
+
+
+
+** json **                         
+```
+{"messageKey": "5-a97d66cd-67f9-42ba-aa61-a357455088ac-1456148218362", "createdAt": 1456148218000}
+```
+
+
+
+
+
+
+****Required Authentication Headers****    
+
+
+
+
+** request should contain these 4 headers** -           
+
+
+| Apz-Token: Authorization Code  |
+| ------------- |
+| UserId-Enabled:true |
+| Apz-AppId:  application key got in admin dashboard  |  
+| Content-Type:  application/json  |  
+
+
+
+
+Authentication is done using BASIC authentication. It is combination of email & password of admin user .
+
+
+ 
+**Apz-Token** : Basic Base64Encode of email:password
+
+
+
+
+**Example**- 
+
+If the email of the admin(Logged in Applozic Dashboard) is  **jack** and password is **adminLoggedInApplozicDashboard**, 
+then the Apz-Token will be:
+
+**Apz-Token**: Basic amFjazphZG1pbkxvZ2dlZEluQXBwbG96aWNEYXNoYm9hcmQ=
+
+
+**Apz-AppId**: application key of application for which admin want to send message. 
+
+
+
+
+
+
+****User To User Messaging****
+
+
+
+  
+
+
+
+
+
+****Create User API****        
 
 
 
@@ -1358,7 +1467,7 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 **Method Type**: POST
 
-**Content-Type**: application/json, application/xml
+**Content-Type**: application/json
 
 **Parameters**: Json will be passed as a parameter with following properties :-         
 
@@ -1384,7 +1493,7 @@ Are you looking for platform-native Sdks to integrate into your app. All you nee
 
 ** json **                         
 ```
-{"userId":"abc","deviceType":"4","applicationId":"applozic-sample-app"
+{"userId":"robert","deviceType":"4","applicationId":"applozic-sample-app"
 }
 ```
 
@@ -1452,9 +1561,9 @@ Use **deviceKey** from above  registration response to create Authorization Code
 
 
 **Example**- 
-If the userId is **abc** and deviceKey is **09c5d869-6d38-4d6b-9ebf-9de16cdab176**, then the authorization code will be:
+If the userId is **robert** and deviceKey is **09c5d869-6d38-4d6b-9ebf-9de16cdab176**, then the authorization code will be:
 
-Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng==
+Authorization Code: Basic cm9iZXJ0OjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng==
 
 
 
@@ -1471,77 +1580,6 @@ Authorization Code: Basic YWJjOjA5YzVkODY5LTZkMzgtNGQ2Yi05ZWJmLTlkZTE2Y2RhYjE3Ng
 
 
 
-****WEB-PLUGIN INITIALIZE URL****   
-
-
-
-
-**Web-Plugin initialize Url**: https://apps.applozic.com/tab/initialize.page
-
-**Method Type**: GET
-
-**Parameters**:       
-
-
-
-
-| Parameter  | Required | Default  | Description |
-| ------------- | ------------- | ------------- | ------------- |
-| applicationId  | Yes  |   | Your Application Key  |
-| userId  | Yes  |   | User unique Id  |   
-| userName  | No  |   |Name you want to display to other user |   
-
-
-
-
-**Response**:  success Response Json to request with following properties :-         
-
- 
-
-
-** json **
-``` 
-{"token":"agpzfmFwcGxvemljchMLEgZTdVVzZXIYgICAgOTcwAsM","email":"","userId":"Pink","clientId":"paho2555012084064505","countryCode":"IN","deviceKey":"bf845261-5a1b-4782-bbd2-f23fdf249df6","timeZoneOffset":"19800000","websocketUrl":"https://apps.applozic.com","fileBaseUrl":"https://applozic.appspot.com"} 
-```
-
-
-
-
-****Authentication Headers From Web****    
-
-
-
-
-Authentication is done using BASIC authentication.
-
-Use **deviceKey** from above response to create Authorization Code: 
- 
-**Authorization Code** : Basic Base64Encode of userId:deviceKey
-
-
-
-
-**Example**- 
-
-If the userId is **Pink** and deviceKey is **bf845261-5a1b-4782-bbd2-f23fdf249df6**, then the authorization code will be:
-
-Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZjY=
-
-
-
-
-**All request  from Web should contain these 3 headers** -           
-
-
-| Authorization: Authorization Code  |
-| ------------- |
-| UserId-Enabled:true |
-| Application-Key:  Your Application Key  |  
-
-
-
-
-**Note**:- Device-Key in request header only sent from device.
 
 
 
@@ -1572,7 +1610,7 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 ** json **                         
 ```
-{ "to":"XYZ", "message":"Hi XYZ " }
+{ "to":"John", "message":"Hi John" }
 ```
 
 
@@ -1631,7 +1669,7 @@ Authorization Code: Basic UGluazpiZjg0NTI2MS01YTFiLTQ3ODItYmJkMi1mMjNmZGYyNDlkZj
 
 
  ```  
-{"message":[{"key":"5-35c2957b-8de0-482b-bea9-7c5c2e1dd2f4-1452080064726","userKey":"35c2957b-8de0-482b-bea9-7c5c2e1dd2f4","to":"bingo","contactIds":"bingo","message":"how are you","sent":true,"delivered":false,"read":false,"createdAtTime":1452080064000,"type":5,"source":1,"status":3,"pairedMessageKey":"4-35c2957b-8de0-482b-bea9-7c5c2e1dd2f4-1452080064726","contentType":0}]}      
+{"message":[{"key":"5-35c2957b-8de0-482b-bea9-7c5c2e1dd2f4-1452080064726","userKey":"35c2957b-8de0-482b-bea9-7c5c2e1dd2f4","to":"michael","contactIds":"michael","message":"how are you","sent":true,"delivered":false,"read":false,"createdAtTime":1452080064000,"type":5,"source":1,"status":3,"pairedMessageKey":"4-35c2957b-8de0-482b-bea9-7c5c2e1dd2f4-1452080064726","contentType":0}]}      
  ```           
  
  
